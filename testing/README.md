@@ -2,7 +2,9 @@
 
 ## k8s-conformance
 
-步骤：https://github.com/cncf/k8s-conformance/blob/master/instructions.md
+vendor status: <https://docs.google.com/spreadsheets/d/1LxSqBzjOxfGx3cmtZ4EbB_BGCxT_wlxW_xgHVVa23es/edit#gid=0>
+
+步骤：<https://github.com/cncf/k8s-conformance/blob/master/instructions.md>
 
 实验环境测试结果：
 
