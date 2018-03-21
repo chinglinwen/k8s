@@ -2236,7 +2236,7 @@ data:
       "links": [],
       "gnetId": 737
     }
-  747-pod-metrics_rev2.json: |
+  grafana-net-747-dashboard.json: |
     {
       "__inputs": [
         {
