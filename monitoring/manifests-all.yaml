@@ -312,7 +312,7 @@ spec:
     spec:
       containers:
       - name: alertmanager
-        image: quay.io/prometheus/alertmanager:v0.7.1
+        image: reg.qianbao-inc.com/k8s-monitoring/alertmanager:v0.7.1
         args:
           - '-config.file=/etc/alertmanager/config.yml'
           - '-storage.path=/alertmanager'
@@ -373,7 +373,7 @@ spec:
         component: core
     spec:
       containers:
-      - image: grafana/grafana:5.0.3
+      - image: reg.qianbao-inc.com/k8s-monitoring/grafana:5.0.3
         name: grafana-core
         imagePullPolicy: IfNotPresent
         # env:
@@ -3818,7 +3818,7 @@ spec:
       serviceAccountName: prometheus-k8s
       containers:
       - name: grafana-import-dashboards
-        image: giantswarm/tiny-tools
+        image: reg.qianbao-inc.com/k8s-monitoring/tiny-tools
         command: ["/bin/sh", "-c"]
         workingDir: /opt/grafana-import-dashboards
         args:
@@ -4020,7 +4020,7 @@ spec:
       serviceAccountName: prometheus-k8s
       containers:
       - name: prometheus
-        image: prom/prometheus:v1.7.0
+        image: reg.qianbao-inc.com/k8s-monitoring/prometheus:v1.7.0
         args:
           - '-storage.local.retention=12h'
           - '-storage.local.memory-chunks=500000'
@@ -4078,7 +4078,7 @@ spec:
     spec:
       containers:
       - name: read-du
-        image: giantswarm/tiny-tools
+        image: reg.qianbao-inc.com/k8s-monitoring/tiny-tools
         imagePullPolicy: Always
         # FIXME threshold via env var
         # The
@@ -4103,7 +4103,7 @@ spec:
         - name: metrics
           mountPath: /tmp
       - name: caddy
-        image: dockermuenster/caddy:0.9.3
+        image: reg.qianbao-inc.com/k8s-monitoring/caddy:0.9.3
         command:
         - "caddy"
         - "-port=9102"
@@ -4138,7 +4138,7 @@ spec:
         component: node-exporter
     spec:
       containers:
-      - image: prom/node-exporter:v0.15.2
+      - image: reg.qianbao-inc.com/k8s-monitoring/node-exporter:v0.15.2
         name: prometheus-node-exporter
         ports:
         - name: prom-node-exp
