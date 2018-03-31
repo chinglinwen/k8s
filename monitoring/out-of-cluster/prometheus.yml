@@ -1,0 +1,164 @@
+# for prometheus, version 2.2.1
+
+global:
+  scrape_interval: 10s
+  scrape_timeout: 10s
+  evaluation_interval: 10s
+rule_files:
+  - "/etc/prometheus-rules/*.rules"
+scrape_configs:
+
+  # https://github.com/prometheus/prometheus/blob/master/documentation/examples/prometheus-kubernetes.yml#L19
+  - job_name: 'kubernetes-apiservers'
+
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true
+    bearer_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJtb25pdG9yaW5nIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InByb21ldGhldXMtazhzLXRva2VuLTV6cW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InByb21ldGhldXMtazhzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiOTJmYThiOWItMzBiYi0xMWU4LWFlZTItZjQwMzQzNDM3NjU0Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vbml0b3Jpbmc6cHJvbWV0aGV1cy1rOHMifQ.seXXt0PLAlNzclSq28zks7rVlgkhQzn6ZqPLP9CmgAPOAD5XeE19t2MmpMKXWZAe14sBILT4hZTFeG_yiepYB4q8x5frpoKU7ml_z7eKbPgHAPV_sHskyd9WIzUuC3yHaqQa-3E_SDaXTna_FAHCoCkSKZtsVPou5qHHPwhQvez2YNB4hM67OZv2uQCcZAO4kLVL5_0af68cuxkIkrRw7MI9C2WyxMK6NUIoa_YsR7eXsGYuGN2aDy-M_UDY7vNngqPiAQQ4BgwjUHzam0Kx-spBU0XxFbGVk6Na2iew1yFYPnGtC7ebEAfsDL9A_YV2DLzol4YX4QPAqMcbphKmWw"
+    kubernetes_sd_configs:
+      - role: endpoints
+        api_server: 172.28.46.123
+        tls_config:
+          insecure_skip_verify: true
+        bearer_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJtb25pdG9yaW5nIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InByb21ldGhldXMtazhzLXRva2VuLTV6cW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InByb21ldGhldXMtazhzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiOTJmYThiOWItMzBiYi0xMWU4LWFlZTItZjQwMzQzNDM3NjU0Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vbml0b3Jpbmc6cHJvbWV0aGV1cy1rOHMifQ.seXXt0PLAlNzclSq28zks7rVlgkhQzn6ZqPLP9CmgAPOAD5XeE19t2MmpMKXWZAe14sBILT4hZTFeG_yiepYB4q8x5frpoKU7ml_z7eKbPgHAPV_sHskyd9WIzUuC3yHaqQa-3E_SDaXTna_FAHCoCkSKZtsVPou5qHHPwhQvez2YNB4hM67OZv2uQCcZAO4kLVL5_0af68cuxkIkrRw7MI9C2WyxMK6NUIoa_YsR7eXsGYuGN2aDy-M_UDY7vNngqPiAQQ4BgwjUHzam0Kx-spBU0XxFbGVk6Na2iew1yFYPnGtC7ebEAfsDL9A_YV2DLzol4YX4QPAqMcbphKmWw"
+    relabel_configs:
+    - source_labels: [__meta_kubernetes_namespace, __meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]
+      action: keep
+      regex: default;kubernetes;https
+
+  # https://github.com/prometheus/prometheus/blob/master/documentation/examples/prometheus-kubernetes.yml#L37
+  - job_name: 'kubernetes-nodes'
+    kubernetes_sd_configs:
+      - role: node
+        api_server: 172.28.46.123
+        tls_config:
+          insecure_skip_verify: true
+        bearer_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJtb25pdG9yaW5nIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InByb21ldGhldXMtazhzLXRva2VuLTV6cW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InByb21ldGhldXMtazhzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiOTJmYThiOWItMzBiYi0xMWU4LWFlZTItZjQwMzQzNDM3NjU0Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vbml0b3Jpbmc6cHJvbWV0aGV1cy1rOHMifQ.seXXt0PLAlNzclSq28zks7rVlgkhQzn6ZqPLP9CmgAPOAD5XeE19t2MmpMKXWZAe14sBILT4hZTFeG_yiepYB4q8x5frpoKU7ml_z7eKbPgHAPV_sHskyd9WIzUuC3yHaqQa-3E_SDaXTna_FAHCoCkSKZtsVPou5qHHPwhQvez2YNB4hM67OZv2uQCcZAO4kLVL5_0af68cuxkIkrRw7MI9C2WyxMK6NUIoa_YsR7eXsGYuGN2aDy-M_UDY7vNngqPiAQQ4BgwjUHzam0Kx-spBU0XxFbGVk6Na2iew1yFYPnGtC7ebEAfsDL9A_YV2DLzol4YX4QPAqMcbphKmWw"
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: '(.*):10250'
+        replacement: '${1}:10255'
+        target_label: __address__
+
+  # https://github.com/prometheus/prometheus/blob/master/documentation/examples/prometheus-kubernetes.yml#L79
+  - job_name: 'kubernetes-endpoints'
+    kubernetes_sd_configs:
+      - role: endpoints
+        api_server: 172.28.46.123
+        tls_config:
+          insecure_skip_verify: true
+        bearer_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJtb25pdG9yaW5nIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InByb21ldGhldXMtazhzLXRva2VuLTV6cW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InByb21ldGhldXMtazhzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiOTJmYThiOWItMzBiYi0xMWU4LWFlZTItZjQwMzQzNDM3NjU0Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vbml0b3Jpbmc6cHJvbWV0aGV1cy1rOHMifQ.seXXt0PLAlNzclSq28zks7rVlgkhQzn6ZqPLP9CmgAPOAD5XeE19t2MmpMKXWZAe14sBILT4hZTFeG_yiepYB4q8x5frpoKU7ml_z7eKbPgHAPV_sHskyd9WIzUuC3yHaqQa-3E_SDaXTna_FAHCoCkSKZtsVPou5qHHPwhQvez2YNB4hM67OZv2uQCcZAO4kLVL5_0af68cuxkIkrRw7MI9C2WyxMK6NUIoa_YsR7eXsGYuGN2aDy-M_UDY7vNngqPiAQQ4BgwjUHzam0Kx-spBU0XxFbGVk6Na2iew1yFYPnGtC7ebEAfsDL9A_YV2DLzol4YX4QPAqMcbphKmWw"
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
+        action: keep
+        regex: true
+      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scheme]
+        action: replace
+        target_label: __scheme__
+        regex: (https?)
+      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_path]
+        action: replace
+        target_label: __metrics_path__
+        regex: (.+)
+      - source_labels: [__address__, __meta_kubernetes_service_annotation_prometheus_io_port]
+        action: replace
+        target_label: __address__
+        regex: (.+)(?::\d+);(\d+)
+        replacement: $1:$2
+      - action: labelmap
+        regex: __meta_kubernetes_service_label_(.+)
+      - source_labels: [__meta_kubernetes_namespace]
+        action: replace
+        target_label: kubernetes_namespace
+      - source_labels: [__meta_kubernetes_service_name]
+        action: replace
+        target_label: kubernetes_name
+
+  - job_name: kubernetes-dns
+    scrape_interval: 10s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    kubernetes_sd_configs:
+      - role: endpoints
+        namespaces:
+          names: [kube-system]
+        api_server: 172.28.46.123
+        tls_config:
+          insecure_skip_verify: true
+        bearer_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJtb25pdG9yaW5nIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InByb21ldGhldXMtazhzLXRva2VuLTV6cW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InByb21ldGhldXMtazhzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiOTJmYThiOWItMzBiYi0xMWU4LWFlZTItZjQwMzQzNDM3NjU0Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vbml0b3Jpbmc6cHJvbWV0aGV1cy1rOHMifQ.seXXt0PLAlNzclSq28zks7rVlgkhQzn6ZqPLP9CmgAPOAD5XeE19t2MmpMKXWZAe14sBILT4hZTFeG_yiepYB4q8x5frpoKU7ml_z7eKbPgHAPV_sHskyd9WIzUuC3yHaqQa-3E_SDaXTna_FAHCoCkSKZtsVPou5qHHPwhQvez2YNB4hM67OZv2uQCcZAO4kLVL5_0af68cuxkIkrRw7MI9C2WyxMK6NUIoa_YsR7eXsGYuGN2aDy-M_UDY7vNngqPiAQQ4BgwjUHzam0Kx-spBU0XxFbGVk6Na2iew1yFYPnGtC7ebEAfsDL9A_YV2DLzol4YX4QPAqMcbphKmWw"
+    relabel_configs:
+    - source_labels: [__address__]
+      separator: ;
+      regex: (.*):(1005[4|5])
+      target_label: __address__
+      replacement: ${1}:${2}
+      action: keep
+
+  # https://github.com/prometheus/prometheus/blob/master/documentation/examples/prometheus-kubernetes.yml#L119
+  - job_name: 'kubernetes-services'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    kubernetes_sd_configs:
+      - role: service
+        api_server: 172.28.46.123
+        tls_config:
+          insecure_skip_verify: true
+        bearer_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJtb25pdG9yaW5nIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InByb21ldGhldXMtazhzLXRva2VuLTV6cW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InByb21ldGhldXMtazhzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiOTJmYThiOWItMzBiYi0xMWU4LWFlZTItZjQwMzQzNDM3NjU0Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vbml0b3Jpbmc6cHJvbWV0aGV1cy1rOHMifQ.seXXt0PLAlNzclSq28zks7rVlgkhQzn6ZqPLP9CmgAPOAD5XeE19t2MmpMKXWZAe14sBILT4hZTFeG_yiepYB4q8x5frpoKU7ml_z7eKbPgHAPV_sHskyd9WIzUuC3yHaqQa-3E_SDaXTna_FAHCoCkSKZtsVPou5qHHPwhQvez2YNB4hM67OZv2uQCcZAO4kLVL5_0af68cuxkIkrRw7MI9C2WyxMK6NUIoa_YsR7eXsGYuGN2aDy-M_UDY7vNngqPiAQQ4BgwjUHzam0Kx-spBU0XxFbGVk6Na2iew1yFYPnGtC7ebEAfsDL9A_YV2DLzol4YX4QPAqMcbphKmWw"
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_probe]
+        action: keep
+        regex: true
+      - source_labels: [__address__]
+        target_label: __param_target
+      - target_label: __address__
+        replacement: blackbox
+      - source_labels: [__param_target]
+        target_label: instance
+      - action: labelmap
+        regex: __meta_kubernetes_service_label_(.+)
+      - source_labels: [__meta_kubernetes_namespace]
+        target_label: kubernetes_namespace
+      - source_labels: [__meta_kubernetes_service_name]
+        target_label: kubernetes_name
+
+  # https://github.com/prometheus/prometheus/blob/master/documentation/examples/prometheus-kubernetes.yml#L156
+  - job_name: 'kubernetes-pods'
+    kubernetes_sd_configs:
+      - role: pod
+        api_server: 172.28.46.123
+        tls_config:
+          insecure_skip_verify: true
+        bearer_token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJtb25pdG9yaW5nIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InByb21ldGhldXMtazhzLXRva2VuLTV6cW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InByb21ldGhldXMtazhzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiOTJmYThiOWItMzBiYi0xMWU4LWFlZTItZjQwMzQzNDM3NjU0Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Om1vbml0b3Jpbmc6cHJvbWV0aGV1cy1rOHMifQ.seXXt0PLAlNzclSq28zks7rVlgkhQzn6ZqPLP9CmgAPOAD5XeE19t2MmpMKXWZAe14sBILT4hZTFeG_yiepYB4q8x5frpoKU7ml_z7eKbPgHAPV_sHskyd9WIzUuC3yHaqQa-3E_SDaXTna_FAHCoCkSKZtsVPou5qHHPwhQvez2YNB4hM67OZv2uQCcZAO4kLVL5_0af68cuxkIkrRw7MI9C2WyxMK6NUIoa_YsR7eXsGYuGN2aDy-M_UDY7vNngqPiAQQ4BgwjUHzam0Kx-spBU0XxFbGVk6Na2iew1yFYPnGtC7ebEAfsDL9A_YV2DLzol4YX4QPAqMcbphKmWw"
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+        action: keep
+        regex: true
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+        action: replace
+        target_label: __metrics_path__
+        regex: (.+)
+      - source_labels: [__address__, __meta_kubernetes_pod_annotation_prometheus_io_port]
+        action: replace
+        regex: (.+):(?:\d+);(\d+)
+        replacement: ${1}:${2}
+        target_label: __address__
+      - action: labelmap
+        regex: __meta_kubernetes_pod_label_(.+)
+      - source_labels: [__meta_kubernetes_namespace]
+        action: replace
+        target_label: kubernetes_namespace
+      - source_labels: [__meta_kubernetes_pod_name]
+        action: replace
+        target_label: kubernetes_pod_name
+      - source_labels: [__meta_kubernetes_pod_container_port_number]
+        action: keep
+        regex: 9\d{3}
+
+  - job_name: 'prometheus'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: ['localhost:9090']
