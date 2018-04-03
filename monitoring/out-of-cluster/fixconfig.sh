@@ -1,8 +1,11 @@
 #!/bin/sh
 ip="$1"
 if [ "x$ip" = "x" ]; then
+  ip="$( ./getip.sh )"
+fi
+if [ "x$ip" = "x" ]; then
   echo "Please, provide cluster apiserver ip"
-  echo "Usage: ./fixconfig.sh ip"
+  echo "Usage: ./fixconfig.sh [ip]"
   exit 1
 fi
 
