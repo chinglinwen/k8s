@@ -1,0 +1,42 @@
+# source file
+
+# default base
+base=data
+
+makebase () {
+  base="$1"
+  mkdir $base 2>/dev/null
+  echo $base
+  echo "服务名	并发数	QPS"
+}
+
+t () {
+  name=$1
+  time=$2
+  n=$3
+  url=$4
+  out="$name-$time-$n"
+  lsout="$( ls $base | grep -w $out  )"
+  count="$( echo "$lsout" | wc -l | awk '{ print $1 }' )"
+  ((count++))
+  if [ "x$lsout" = "x" ]; then
+    count=1
+  fi
+  out="$name-$time-$n.$count.out"
+    
+  #echo "start $name time=$time, concurrent=$n, output file=$out"
+  outfile=$base/$out
+  echo "hey -z $time -c $n $url >> $outfile" > $outfile
+  echo "start time: $( date +%F_%T )" >> $outfile
+  hey -z $time -c $n $url >> $outfile
+  echo "end time: $( date +%F_%T )" >> $outfile
+  
+  qps="$( grep Requests $outfile |awk '{ print $2 }' FS=':' |tr -d '\t' )" >>$outfile
+  echo -e "result:\t$name-v$count\t$time\t$n\t$qps" >> $outfile
+  echo -e "$name-$time-v$count\t$n\t$qps" 
+}
+
+fs () {
+  t fs $1 $2 http://protest.wk.qianbao-inc.com
+}
+

@@ -1,0 +1,52 @@
+hey -z 10s -c 1000 http://protest.wk.qianbao-inc.com >> data-2018-04-03_191943/fs-10s-1000.1.out
+start time: 2018-04-03_19:19:59
+
+Summary:
+  Total:	19.0093 secs
+  Slowest:	14.4667 secs
+  Fastest:	0.0018 secs
+  Average:	0.0713 secs
+  Requests/sec:	8399.4082
+  
+  Total data:	5282083 bytes
+  Size/request:	33 bytes
+
+Response time histogram:
+  0.002 [1]	|
+  1.448 [158016]	|∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  2.895 [589]	|
+  4.341 [729]	|
+  5.788 [193]	|
+  7.234 [71]	|
+  8.681 [28]	|
+  10.127 [29]	|
+  11.574 [3]	|
+  13.020 [4]	|
+  14.467 [4]	|
+
+
+Latency distribution:
+  10% in 0.0026 secs
+  25% in 0.0030 secs
+  50% in 0.0038 secs
+  75% in 0.0071 secs
+  90% in 0.0144 secs
+  95% in 0.0256 secs
+  99% in 1.6382 secs
+
+Details (average, fastest, slowest):
+  DNS+dialup:	0.0001 secs, 0.0018 secs, 14.4667 secs
+  DNS-lookup:	0.0001 secs, 0.0000 secs, 0.0179 secs
+  req write:	0.0000 secs, 0.0000 secs, 0.0057 secs
+  resp wait:	0.0711 secs, 0.0018 secs, 14.4666 secs
+  resp read:	0.0000 secs, 0.0000 secs, 0.0109 secs
+
+Status code distribution:
+  [200]	159611 responses
+  [502]	12 responses
+  [504]	44 responses
+
+
+
+end time: 2018-04-03_19:20:18
+result:	fs-v1	10s	1000	8399.4082
