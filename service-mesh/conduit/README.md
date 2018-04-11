@@ -30,6 +30,7 @@ bak  conduit  conduit.yaml  conduit.yaml.bak  emojivoto.yml  emojivoto.yml.injec
       - image: reg.qianbao-inc.com/k8s-monitoring/fs
         image: gcr.io/runconduit/proxy:v0.3.1
         image: gcr.io/runconduit/proxy-init:v0.3.1
+```        
 [wen@pcmaster conduit]$ grep proxy img.sed 
 s_gcr.io/runconduit/proxy-init:v0.3.1_chinglinwen/gcr.io-runconduit-proxy-init:v0.3.1_
 s_gcr.io/runconduit/proxy:v0.3.1_chinglinwen/gcr.io-runconduit-proxy:v0.3.1_
@@ -47,9 +48,9 @@ s_gcr.io/runconduit/proxy-init:v0.3.1_chinglinwen/gcr.io-runconduit-proxy-init:v
         image: chinglinwen/gcr.io-runconduit-proxy-init:v0.3.1
 [wen@pcmaster conduit]$ kubectl apply -f fs.yaml.injected 
 error: error converting YAML to JSON: yaml: line 1: mapping values are not allowed in this context
-[wen@pcmaster conduit]$ cat ^C
-[wen@pcmaster conduit]$ 
+```
 
+```
 [wen@pcmaster conduit]$ cat img.sed 
 s_gcr.io/runconduit/proxy-init:v0.3.1_chinglinwen/gcr.io-runconduit-proxy-init:v0.3.1_
 s_gcr.io/runconduit/controller:v0.3.1_chinglinwen/gcr.io-runconduit-controller:v0.3.1_
@@ -69,7 +70,7 @@ s_grafana/grafana:5.0.0-beta4_chinglinwen/grafana-grafana:5.0.0-beta4_
 s_gcr.io/runconduit/proxy:v0.3.1_chinglinwen/gcr.io-runconduit-proxy:v0.3.1_
 s_gcr.io/runconduit/proxy-init:v0.3.1_chinglinwen/gcr.io-runconduit-proxy-init:v0.3.1_
 [wen@pcmaster conduit]$ 
-
+```
 
 ./conduit inject fs.yaml | sed -f img.sed > fs.yaml.injected
 
