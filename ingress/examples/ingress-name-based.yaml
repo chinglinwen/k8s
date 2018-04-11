@@ -2,25 +2,23 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: cheese
-  annotations:
-    kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - host: stilton.minikube
+  - host: stilton.example
     http:
       paths:
       - path: /
         backend:
           serviceName: stilton
           servicePort: http
-  - host: cheddar.minikube
+  - host: cheddar.example
     http:
       paths:
       - path: /
         backend:
           serviceName: cheddar
           servicePort: http
-  - host: wensleydale.minikube
+  - host: wensleydale.example
     http:
       paths:
       - path: /

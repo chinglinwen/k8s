@@ -23,7 +23,7 @@ spec:
       terminationGracePeriodSeconds: 60
       hostNetwork: true
       containers:
-      - image: reg.qianbao-inc.com/k8s-monitoring/traefik
+      - image: reg.qianbao-inc.com/k8s-monitoring/traefik:v1.6
         name: traefik-ingress-lb
         ports:
         - name: http

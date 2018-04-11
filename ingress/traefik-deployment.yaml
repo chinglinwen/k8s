@@ -26,7 +26,7 @@ spec:
       serviceAccountName: traefik-ingress-controller
       terminationGracePeriodSeconds: 60
       containers:
-      - image: reg.qianbao-inc.com/k8s-monitoring/traefik
+      - image: reg.qianbao-inc.com/k8s-monitoring/traefik:v1.6
         name: traefik-ingress-lb
         args:
         - --api
