@@ -1,0 +1,17 @@
+s_gcr.io/runconduit/proxy-init:v0.3.1_chinglinwen/gcr.io-runconduit-proxy-init:v0.3.1_
+s_gcr.io/runconduit/controller:v0.3.1_chinglinwen/gcr.io-runconduit-controller:v0.3.1_
+s_gcr.io/runconduit/controller:v0.3.1_chinglinwen/gcr.io-runconduit-controller:v0.3.1_
+s_gcr.io/runconduit/controller:v0.3.1_chinglinwen/gcr.io-runconduit-controller:v0.3.1_
+s_gcr.io/runconduit/controller:v0.3.1_chinglinwen/gcr.io-runconduit-controller:v0.3.1_
+s_gcr.io/runconduit/controller:v0.3.1_chinglinwen/gcr.io-runconduit-controller:v0.3.1_
+s_gcr.io/runconduit/proxy:v0.3.1_chinglinwen/gcr.io-runconduit-proxy:v0.3.1_
+s_gcr.io/runconduit/proxy-init:v0.3.1_chinglinwen/gcr.io-runconduit-proxy-init:v0.3.1_
+s_gcr.io/runconduit/web:v0.3.1_chinglinwen/gcr.io-runconduit-web:v0.3.1_
+s_gcr.io/runconduit/proxy:v0.3.1_chinglinwen/gcr.io-runconduit-proxy:v0.3.1_
+s_gcr.io/runconduit/proxy-init:v0.3.1_chinglinwen/gcr.io-runconduit-proxy-init:v0.3.1_
+s_prom/prometheus:v2.1.0_chinglinwen/prom-prometheus:v2.1.0_
+s_gcr.io/runconduit/proxy:v0.3.1_chinglinwen/gcr.io-runconduit-proxy:v0.3.1_
+s_gcr.io/runconduit/proxy-init:v0.3.1_chinglinwen/gcr.io-runconduit-proxy-init:v0.3.1_
+s_grafana/grafana:5.0.0-beta4_chinglinwen/grafana-grafana:5.0.0-beta4_
+s_gcr.io/runconduit/proxy:v0.3.1_chinglinwen/gcr.io-runconduit-proxy:v0.3.1_
+s_gcr.io/runconduit/proxy-init:v0.3.1_chinglinwen/gcr.io-runconduit-proxy-init:v0.3.1_
