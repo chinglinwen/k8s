@@ -65,7 +65,7 @@ def parse_args():
       '--use-cluster-dns', action='store_true',
       help='if set, use cluster DNS instead of creating one')
   parser.add_argument(
-      '--dns-ip', type=str, default='10.0.0.20',
+      '--dns-ip', type=str, default='10.254.0.3',
       help='IP to use for the DNS service. Note: --use-cluster-dns '
         'implicitly sets the service-ip of kube-dns service')
   parser.add_argument(

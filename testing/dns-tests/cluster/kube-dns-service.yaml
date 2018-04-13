@@ -21,7 +21,7 @@ metadata:
 spec:
   selector:
     app: kube-dns-perf-server
-  clusterIP: 10.0.0.20
+  clusterIP: 10.254.0.3
   ports:
   - name: dns
     port: 53

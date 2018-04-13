@@ -1,0 +1,4 @@
+s_k8s.gcr.io/kubedns-amd64:1.9_chinglinwen/k8s.gcr.io-kubedns-amd64:1.9_
+s_k8s.gcr.io/kube-dnsmasq-amd64:1.4_chinglinwen/k8s.gcr.io-kube-dnsmasq-amd64:1.4_
+s_k8s.gcr.io/dnsmasq-metrics-amd64:1.0_chinglinwen/k8s.gcr.io-dnsmasq-metrics-amd64:1.0_
+s_k8s.gcr.io/exechealthz-amd64:1.2_chinglinwen/k8s.gcr.io-exechealthz-amd64:1.2_
