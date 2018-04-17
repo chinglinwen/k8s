@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: minion
+  namespace: minions
+
+spec:
+  replicas: 1
+  selector:
+    k8s-app: minion
+    version: v0
+  template:
+    metadata:
+      labels:
+        k8s-app: minion
+        version: v0
+    spec:
+      containers:
+      - name: minion
+        image: reg.qianbao-inc.com/k8s/mmm-minion:latest
+        env:
+        - name: MINION_RC
+          value: "1"
+      nodeSelector:
+NODENAME
