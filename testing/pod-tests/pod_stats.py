@@ -4,6 +4,11 @@ import argparse
 import operator
 import itertools
 import numpy as np
+
+# disabled DISPLAY need by wen
+import matplotlib
+matplotlib.use('Agg')
+
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
@@ -17,6 +22,9 @@ COLORS = {
 }
 
 def main():
+    # Turn interactive plotting off , add by wen
+    plt.ioff()
+
     parser = argparse.ArgumentParser(prog='pod-stats')
     parser.add_argument('data', nargs='+')
     args = parser.parse_args()
@@ -78,8 +86,15 @@ def main():
     for label in legend.get_texts():
         label.set_fontsize('small')
 
-    plt.show()
-    figure.savefig('figure.svg')
+    #plt.show() ,change to plot by wen
+    plt.plot()
+
+    #figure.savefig(source+'.svg')
+    #print("saved to "+source+'.svg.')
+
+    figure.savefig(source+'.png')
+    print("saved to "+source+'.png.')
+    print("done.")
 
 if __name__ == '__main__':
     main()
