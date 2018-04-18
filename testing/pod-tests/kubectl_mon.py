@@ -4,7 +4,7 @@ import re
 import subprocess
 import time
 
-KUBECTL_CMD = 'kubectl --namespace minions get pods -l k8s-app=minion'
+KUBECTL_CMD = 'kubectl --namespace minions get pods | grep minion' 
 
 
 def main():

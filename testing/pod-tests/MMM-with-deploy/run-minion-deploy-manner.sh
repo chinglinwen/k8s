@@ -10,13 +10,13 @@ $NODE
 "
 fi
 REPLICA=${REPLICA:=1}
-MEM=${MEM:=4G}
+MEM=${MEM:=1G}
 resource="          resources:
             limits:
               cpu: 2
               memory: $MEM
             requests:
-              cpu: 500m
+              #cpu: 500m
               memory: $MEM
 "
 RESOURCE=${RESOURCE:=$resource}
