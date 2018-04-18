@@ -29,7 +29,7 @@ requests: memory: 1G
 
 ```
 ./kubectl_mon.py &> single-node-deploy-limit.out &
-RESOURCE="#" N=100 ./start.sh 
+N=100 ./start.sh 
 kubectl get pods -n minions -o wide|grep minion|grep Run|wc
 ```
 
