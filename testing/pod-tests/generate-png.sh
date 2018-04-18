@@ -7,9 +7,10 @@ if [ "x$base" = "x" ]; then
 fi
 cd $base
 ls *.out | while read file; do
-  grep minion all-nodes.out >$file.csv
+  grep minion $file >$file.csv
   sed -i '/ErrImagePull/d' $file.csv
   sed -i '/resources/d' $file.csv
+  sed -i '$ d' $file.csv
   ../pod_stats.py $file.csv
 done
 
