@@ -23,6 +23,26 @@ requests: memory: 1G
 
 一个deployment对应一个pod
 
+> 即使忽略cpu指定，默认会变成limit的cpu值
+
+可能出现的资源不足的项
+
+1. memory
+2. cpu
+3. cidr
+
+see cpu on nodes ( also try see from dashboard )
+    kubectl top nodes
+    NAME            CPU(cores)   CPU%      MEMORY(bytes)   MEMORY%   
+    172.28.40.253   294m         9%        3583Mi          54%       
+    172.28.40.252   303m         7%        3498Mi          45% 
+    173.
+see current pods number 
+    kubectl get pods --all-namespaces|grep -v NAME|wc -l
+    
+see how much ip already used
+    kubectl get pods,ep -o wide --all-namespaces|grep 172|wc
+    
 ## 测试方法
 
 ### single node ( with limit )
