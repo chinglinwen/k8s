@@ -83,7 +83,7 @@ kubectl get pods -n minions -o wide|grep minion|grep Run|wc
 ./kubectl_mon.py &> create-and-destory-pod.out &
 cd MMM
 ./start.sh > test.out
-./periodically-delete.sh >> test.out
+./periodically-delete.sh >> test.out &
 ```
 
 ### deploy create and destroy
@@ -93,7 +93,7 @@ cd MMM
 cd MMM-with-deploy
 export RESOURCE="#"
 ./start.sh > test.out
-./periodically-delete.sh >> test.out
+./periodically-delete.sh >> test.out &
 export RESOURCE=""
 ```
 
