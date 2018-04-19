@@ -41,7 +41,7 @@ see current pods number
     kubectl get pods --all-namespaces|grep -v NAME|wc -l
     
 see how much ip already used
-    kubectl get pods,ep -o wide --all-namespaces|grep 172|wc
+    kubectl get pods,ep -o wide --all-namespaces|grep -v -e none -e NAMESPACE -e '^$' |wc -l
     
 ## 测试方法
 

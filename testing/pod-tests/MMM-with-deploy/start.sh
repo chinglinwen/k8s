@@ -4,7 +4,7 @@ if [ $? -eq 0 ]; then
   exit 1
 fi
 ./run-master.sh
-sleep 3
-./proxy.sh &
+./proxy.sh
+echo "Start time: $(date "+%s%N")"
 ./run-minion-deploy-manner.sh
 echo "See http://$( kubectl get ep -n minions | grep 8888 | awk '{ print $2}' )"/stats

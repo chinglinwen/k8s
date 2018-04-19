@@ -13,16 +13,15 @@ REPLICA=${REPLICA:=1}
 MEM=${MEM:=1G}
 resource="          resources:
             limits:
-              cpu: 2
+              #cpu: 2
               memory: $MEM
             requests:
               #cpu: 500m
-              memory: $MEM
-"
+              memory: $MEM"
 RESOURCE=${RESOURCE:=$resource}
 
 echo "Will create $n number of deployments"
-echo "Start time: $(date "+%s%N")"
+#echo "Start time: $(date "+%s%N")"
 
 for ((i=1;i <= $n;i++)) {
   NUMBER=$i
@@ -55,4 +54,4 @@ $NODESELECT
 eof
 }
 
-echo "End time: $(date "+%s%N")"
+#echo "End time: $(date "+%s%N")"
