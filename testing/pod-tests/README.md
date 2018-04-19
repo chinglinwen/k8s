@@ -77,6 +77,26 @@ RESOURCE="#" N=300 ALLNODES=true ./start.sh
 kubectl get pods -n minions -o wide|grep minion|grep Run|wc 
 ```
 
+### pods create and destroy
+
+```
+./kubectl_mon.py &> create-and-destory-pod.out &
+cd MMM
+./start.sh > test.out
+./periodically-delete.sh >> test.out
+```
+
+### deploy create and destroy
+
+```
+./kubectl_mon.py &> create-and-destory-deploy.out &
+cd MMM-with-deploy
+export RESOURCE="#"
+./start.sh > test.out
+./periodically-delete.sh >> test.out
+export RESOURCE=""
+```
+
 ## 测试结果
 
 > 预计所需安装
