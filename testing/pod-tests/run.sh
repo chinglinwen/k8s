@@ -7,11 +7,15 @@ if [ "x$FORMAL" = "x" ]; then
   n2=${N2:=3}
   n3=${N3:=3}
   n4=${N4:=3}
+  n5=${N5:=3}
+  n6=${N6:=3}
 else
   n1=${N1:=100}
   n2=${N2:=100}
   n3=${N3:=100}
   n4=${N4:=300}
+  n5=${N5:=100}
+  n6=${N6:=100}
 fi
 
 echo "n1: $n1"
@@ -79,12 +83,12 @@ test4 () {
 
 test5 () {
   out test5
-  ./run-minion.sh && ./pod-destroy.sh
+  N=$n5 ./run-minion.sh && ./pod-destroy.sh
 }
 
 test6 () {
   out test6
-  RESOURCE="#" ./run-minion-deploy-manner.sh && ./deploy-destroy.sh
+  RESOURCE="#" N=$n6 ./run-minion-deploy-manner.sh && ./deploy-destroy.sh
 }
 
 testall(){
