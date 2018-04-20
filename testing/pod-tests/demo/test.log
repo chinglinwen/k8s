@@ -1,0 +1,282 @@
+
+====== TEST: test1 ======
+Env setting: N=3
+
+Will create 3 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+waiting up runining to 2
+waiting up runining to 3
+waiting up runining to 3
+clean up sql done.
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-2" deleted
+deployment "minion-3" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Something not cleaned up, see following ps output
+wen      16185  5944  0 17:03 pts/0    00:00:00 /bin/sh ./run.sh
+wen      16268 16185  0 17:03 pts/0    00:00:00 tail -f /home/wen/t/k8s/testing/pod-tests/data-20180420-170327/test.log
+wen      17151 16185  0 17:04 pts/0    00:00:00 ps -ef
+wen      17152 16185  0 17:04 pts/0    00:00:00 grep 16185
+
+====== TEST: test2 ======
+Env setting: N=3 RESOURCE=#
+
+Will create 3 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+waiting up runining to 2
+waiting up runining to 3
+waiting up runining to 3
+clean up sql done.
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-2" deleted
+deployment "minion-3" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Something not cleaned up, see following ps output
+wen      16185  5944  0 17:03 pts/0    00:00:00 /bin/sh ./run.sh
+wen      16268 16185  0 17:03 pts/0    00:00:00 tail -f /home/wen/t/k8s/testing/pod-tests/data-20180420-170327/test.log
+wen      18038 16185  0 17:05 pts/0    00:00:00 ps -ef
+wen      18039 16185  0 17:05 pts/0    00:00:00 grep 16185
+
+====== TEST: test3 ======
+Env setting: N=3 ALLNODES=true
+
+Will create 3 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+waiting up runining to 2
+waiting up runining to 3
+waiting up runining to 3
+clean up sql done.
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-2" deleted
+deployment "minion-3" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Something not cleaned up, see following ps output
+wen      16185  5944  0 17:03 pts/0    00:00:00 /bin/sh ./run.sh
+wen      16268 16185  0 17:03 pts/0    00:00:00 tail -f /home/wen/t/k8s/testing/pod-tests/data-20180420-170327/test.log
+wen      18869 16185  0 17:05 pts/0    00:00:00 ps -ef
+wen      18870 16185  0 17:05 pts/0    00:00:00 grep 16185
+
+====== TEST: test4 ======
+Env setting: N=3 RESOURCE=# ALLNODES=true
+
+Will create 3 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+waiting up runining to 2
+waiting up runining to 3
+waiting up runining to 3
+clean up sql done.
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-2" deleted
+deployment "minion-3" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Something not cleaned up, see following ps output
+wen      16185  5944  0 17:03 pts/0    00:00:00 /bin/sh ./run.sh
+wen      16268 16185  0 17:03 pts/0    00:00:00 tail -f /home/wen/t/k8s/testing/pod-tests/data-20180420-170327/test.log
+wen      19736 16185  0 17:06 pts/0    00:00:00 ps -ef
+wen      19737 16185  0 17:06 pts/0    00:00:00 grep 16185
+
+====== TEST: test5 ======
+replicationcontroller "minion" created
+
+will try to destroy 3 times...
+
+it's not running
+it's not running
+1 times of delete
+pod "minion-hqff5" deleted
+it's not running
+it's not running
+2 times of delete
+pod "minion-h79h3" deleted
+it's not running
+it's not running
+3 times of delete
+pod "minion-66vkh" deleted
+it's not running
+it's not running
+complete 3 times of destroy.
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 3
+waiting up runining to 3
+waiting up runining to 2
+clean up sql done.
+try cleanup deploy and pods...
+replicationcontroller "minion" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Something not cleaned up, see following ps output
+wen      16185  5944  0 17:03 pts/0    00:00:00 /bin/sh ./run.sh
+wen      16268 16185  0 17:03 pts/0    00:00:00 tail -f /home/wen/t/k8s/testing/pod-tests/data-20180420-170327/test.log
+wen      21598 16185  0 17:08 pts/0    00:00:00 ps -ef
+wen      21599 16185  0 17:08 pts/0    00:00:00 grep 16185
+
+====== TEST: test6 ======
+Env setting: RESOURCE=#
+
+Will create 1 number of deployments
+deployment "minion-1" created
+
+will try to destroy 3 times...
+
+it's not running
+it's not running
+1 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Will create 1 number of deployments
+deployment "minion-1" created
+it's not running
+it's not running
+2 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Will create 1 number of deployments
+deployment "minion-1" created
+it's not running
+it's not running
+3 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Will create 1 number of deployments
+deployment "minion-1" created
+it's not running
+it's not running
+complete 3 times of destroy.
+End time: 1524215305899198600
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 4
+waiting up runining to 3
+waiting up runining to 2
+waiting up runining to 2
+waiting up runining to 2
+waiting up runining to 2
+clean up sql done.
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Something not cleaned up, see following ps output
+wen      16185  5944  0 17:03 pts/0    00:00:00 /bin/sh ./run.sh
+wen      16268 16185  0 17:03 pts/0    00:00:00 tail -f /home/wen/t/k8s/testing/pod-tests/data-20180420-170327/test.log
+wen      23598 16185  0 17:09 pts/0    00:00:00 ps -ef
+wen      23599 16185  0 17:09 pts/0    00:00:00 grep 16185

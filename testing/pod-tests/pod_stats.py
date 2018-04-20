@@ -69,6 +69,7 @@ def main():
     plot.grid(True)
     plot.set_xlabel('time, s')
     plot.set_ylabel('pods')
+    plt.suptitle('Test: '+source.split('.')[0], fontsize=16)
 
     ax = figure.gca()
     ax.yaxis.set_major_locator(mticker.MaxNLocator(integer=True))
@@ -94,7 +95,7 @@ def main():
 
     figure.savefig(source+'.png')
     print("saved to "+source+'.png.')
-    print("done.")
+    #print("done.")
 
 if __name__ == '__main__':
     main()

@@ -11,6 +11,12 @@ fi
 
 gen(){
   file=$1
+  prefix="Tring generate graph from $file... "
+  file $file | grep empty >/dev/null
+  if [ $? -eq 0 ]; then
+    echo "$prefix file is empty"
+    return
+  fi
   grep minion $file >$file.csv
   sed -i '/ErrImagePull/d' $file.csv
   sed -i '/resources/d' $file.csv
@@ -18,6 +24,7 @@ gen(){
   sed -i '$ d' $file.csv
   $base/pod_stats.py $file.csv
   rm $file.csv
+  echo "$prefix ok"
 }
 
 datadir=$1
