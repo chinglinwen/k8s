@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Env setting:"
+env | grep -w -e N -e ALLNODES -e REPLICA -e MEM -e RESOURCE
+echo
+
 n=${N:=1}
 ALLNODES=${ALLNODES:-false}
 

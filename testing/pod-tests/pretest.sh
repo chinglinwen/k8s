@@ -10,5 +10,5 @@ eof
 echo "number of ip used: $( kubectl get pods,ep -o wide --all-namespaces|grep -v -e none -e NAMESPACE -e '^$' | wc -l )"
 echo
 
-echo "detail:"
-kubectl get pods --all-namespaces -o wide|grep -v NAME
+#echo "detail:"
+#kubectl get pods --all-namespaces -o wide|grep -v NAME
