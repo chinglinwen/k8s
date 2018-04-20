@@ -76,7 +76,7 @@ cleanup () {
   # stop output
   ps -ef|grep kubectl_mon.py | grep -v grep | awk '{ print $2 }' | xargs kill
   
-  cnt="$( ps -ef | grep $$ | grep -v -w -e grep -e 'ps -ef' -e tail | wc -l | awk '{ print $1 }' )"
+  cnt="$( ps -ef | grep $$ | grep -v -w -e grep -e 'ps -ef' -e tail -e wc -e awk | wc -l | awk '{ print $1 }' )"
   if [ $cnt -ne 1 ]; then
     echo "Something not cleaned up, see following ps output"
     ps -ef | grep $$
