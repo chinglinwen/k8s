@@ -11,7 +11,8 @@ while true; do
   kubectl -n minions get pods 2>/dev/null | grep minion | grep Pend
   if [ $? -eq 0 ]; then
     echo "Got pending item, see what's happening"
-    exit 1
+    kubectl -n minions get pods 2>/dev/null | grep minion | grep Pend
+    #exit 1
   fi
   echo "$i times of delete"
   ((i++))
