@@ -10,6 +10,7 @@ ls *.out | while read file; do
   grep minion $file >$file.csv
   sed -i '/ErrImagePull/d' $file.csv
   sed -i '/resources/d' $file.csv
+  sed -i '/-ting/d' $file.csv
   sed -i '$ d' $file.csv
   ../pod_stats.py $file.csv
 done
