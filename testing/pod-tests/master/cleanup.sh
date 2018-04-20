@@ -9,8 +9,9 @@ fi
 echo "clean up sql done."
 
 echo "try cleanup deploy and pods..."
-kubectl get deploy -n minions | grep minion | awk '{ print $1 }' | xargs kubectl -n minions delete deploy 2>/dev/null
-kubectl get pods -n minions | grep minion | grep Run | awk '{ print $1 }' | xargs kubectl -n minions delete pod 2>/dev/null
+kubectl get deploy -n minions | grep minion | awk '{ print $1 }' | xargs kubectl -n minions --force --grace-period=0 delete deploy 2>/dev/null
+kubectl get rc -n minions | grep minion | awk '{ print $1 }' | xargs kubectl -n minions --force --grace-period=0 delete rc 2>/dev/null
+kubectl get pods -n minions | grep minion | grep Run | awk '{ print $1 }' | xargs kubectl -n minions --force --grace-period=0 delete pod 2>/dev/null
 
 while true; do
   kubectl get pod -n minions | grep minion >/dev/null
@@ -18,7 +19,7 @@ while true; do
     break
   fi
   echo "waiting minion deleting...."
-  sleep 1
+  sleep 3
 done
 
 echo "all minions deleted."

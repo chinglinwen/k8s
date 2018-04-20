@@ -13,7 +13,7 @@ def main():
         stdout = subprocess.Popen(KUBECTL_CMD, shell=True,
                                   stdout=subprocess.PIPE).stdout.read()
         print('time,name,status')
-        for line in stdout.split('\n')[1:]:
+        for line in stdout.split('\n'):
             if line:
                 tokens = re.split('\s+', line)
                 name = tokens[0]

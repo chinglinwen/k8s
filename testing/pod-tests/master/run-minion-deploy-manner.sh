@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Env setting:"
-env | grep -w -e N -e ALLNODES -e REPLICA -e MEM -e RESOURCE
+envs="$( env | grep -w -e N -e ALLNODES -e REPLICA -e MEM -e RESOURCE )"
+echo "Env setting: $( echo $envs )"
 echo
 
 n=${N:=1}

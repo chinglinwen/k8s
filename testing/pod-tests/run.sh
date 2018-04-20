@@ -22,6 +22,8 @@ echo "n1: $n1"
 echo "n2: $n2"
 echo "n3: $n3"
 echo "n4: $n4"
+echo "n5: $n5"
+echo "n6: $n6"
 
 if [ ! -d master ]; then
   echo "master directory not found"
@@ -31,8 +33,6 @@ fi
 base="$PWD"
 masterdir="$base/master"
 
-#resultdir="$base/data-$( date +%Y%m%d-%H%M%S )"
-#mkdir $resultdir
 
 resultdir="$base"
 
@@ -54,50 +54,98 @@ echo "See http://$( kubectl get ep -n minions | grep 8888 | awk '{ print $2}' )"
 
 out(){
   item="$1"
+  echo
+  echo "====== TEST: $item ======"
   $base/kubectl_mon.py &> $resultdir/$item.out &
+}
+
+cleanup () {
+  while true; do
+    podn="$( kubectl get pod -n minions | grep minion | wc -l | awk '{ print $1 }' )"
+    podr="$( kubectl get pod -n minions | grep minion | grep Run | wc -l | awk '{ print $1 }' )"
+    if [ $podr -ne $podn ]; then
+      echo "waiting up runining to $podn"
+      sleep 1
+      continue
+    fi
+    break
+  done
+  
+  $masterdir/cleanup.sh
+  
+  # stop output
+  ps -ef|grep kubectl_mon.py | grep -v grep | awk '{ print $2 }' | xargs kill
+  
+  cnt="$( ps -ef | grep $$ | wc -l | awk '{ print $1 }' )"
+  if [ $cnt -gt 3 ]; then
+    echo "Something not cleaned up, see following ps output"
+    ps -ef | grep $$
+  fi
+  N=  # reset N
 }
 
 # create max deploy with limit setting
 test1 () {
   out test1
   N=$n1 ./run-minion-deploy-manner.sh
+  cleanup
 }
 
 # create max deploy
 test2 () {
   out test2
   N=$n2 RESOURCE="#" ./run-minion-deploy-manner.sh
+  cleanup
 }
 
 # create max deploy, all nodes, with limit
 test3 () {
   out test3
   N=$n3 ALLNODES=true ./run-minion-deploy-manner.sh
+  cleanup
 }
 
 # create max deploy, all nodes
 test4 () {
   out test4
   RESOURCE="#" N=$n4 ALLNODES=true ./run-minion-deploy-manner.sh
+  cleanup
 }
 
 test5 () {
   out test5
-  N=$n5 ./run-minion.sh && ./pod-destroy.sh
+  ./run-minion.sh && T=$n5 ./pod-destroy.sh
+  cleanup
 }
 
 test6 () {
   out test6
-  RESOURCE="#" N=$n6 ./run-minion-deploy-manner.sh && ./deploy-destroy.sh
+  RESOURCE="#" ./run-minion-deploy-manner.sh && T=$n6 ./deploy-destroy.sh
+  cleanup
 }
 
 testall(){
+  echo
+  echo "Doing all tests."
+
+  resultdir="$base/data-$( date +%Y%m%d-%H%M%S )"
+  mkdir $resultdir
+
+  log=$resultdir/test.log
+  exec 6>&1
+  exec > $log
+  tail -f $log >&2 &
+
   test1
   test2
   test3
   test4
   test5
   test6
+
+  pid="$( ps -ef|grep 'tail -f' |grep -v grep | awk '{ print $2 }' )"
+  kill $pid
+  exec 1>&6 6>&-
 }
 
 case $1 in
