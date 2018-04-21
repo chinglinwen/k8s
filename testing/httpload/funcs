@@ -13,7 +13,7 @@ makebase () {
 t () {
   name=$1
   time=$2
-  n=$3
+  c=$3
   url=$4
   out="$name-$time-$n"
   lsout="$( ls $base | grep -w $out  )"
@@ -23,17 +23,28 @@ t () {
     count=1
   fi
   out="$name-$time-$n.$count.out"
-    
+
   #echo "start $name time=$time, concurrent=$n, output file=$out"
   outfile=$base/$out
-  echo "hey -z $time -c $n $url >> $outfile" > $outfile
   echo "start time: $( date +%F_%T )" >> $outfile
-  hey -z $time -c $n $url >> $outfile
+
+  echo $time | grep -e '[a-z]' >/dev/null
+  if [ $? -eq 0 ]; then
+    unit="T=$time"
+    echo "hey -z $time -c $c $url >> $outfile" > $outfile
+    hey -z $time -c $c $url >> $outfile
+  else
+    n="$( echo "$time * $c" | bc )"
+    unit="N=$n"
+    echo "hey -n $n -c $c $url >> $outfile" > $outfile
+    hey -n $n -c $c $url >> $outfile
+  fi
+    
   echo "end time: $( date +%F_%T )" >> $outfile
   
   qps="$( grep Requests $outfile |awk '{ print $2 }' FS=':' |tr -d '\t' )" >>$outfile
-  echo -e "result:\t$name-v$count\t$time\t$n\t$qps" >> $outfile
-  echo -e "$name-$time-v$count\t$n\t$qps" 
+  echo -e "result:\t$name-$time-v$count($unit)\t$c\t$qps" >> $outfile
+  echo -e "$name-v$count($unit)\t$c\t$qps" 
 }
 
 fs () {
