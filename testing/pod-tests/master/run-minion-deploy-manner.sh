@@ -27,6 +27,10 @@ RESOURCE=${RESOURCE:=$resource}
 echo "Will create $n number of deployments"
 #echo "Start time: $(date "+%s%N")"
 
+
+initcnt="$( kubectl get event -n minions |grep Warn | wc -l  )"
+((initcnt++))
+
 for ((i=1;i <= $n;i++)) {
   NUMBER=$i
   cat <<eof | kubectl create -f -
@@ -56,6 +60,16 @@ $RESOURCE
             value: "$NUMBER"
 $NODESELECT
 eof
+
+  warns="$( kubectl get event -n minions |grep Warn | tail -n +$initcnt )"
+  if [ "x$warns" != "x" ]; then
+    warncnt="$( echo "$warns" | awk '{ print $2 }' FS='::' | wc -l )"
+    warntext="$( echo "$warns" | awk '{ print $2 }' FS='::' | head -3 )"
+    echo "Out of resource: $warncnt"
+    echo "$warntext"
+    echo "stop create deploy at $i"
+    break
+  fi
 }
 
 #echo "End time: $(date "+%s%N")"

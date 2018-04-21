@@ -59,8 +59,18 @@ out(){
   $base/kubectl_mon.py &> $resultdir/$item.out &
 }
 
+initcnt="$( kubectl get event -n minions |grep Warn | wc -l  )"
+((initcnt++))
 cleanup () {
   while true; do
+    warns="$( kubectl get event -n minions |grep Warn | tail -n +$initcnt )"
+    if [ "x$warns" != "x" ]; then
+      warncnt="$( echo "$warns" | awk '{ print $2 }' FS='::' | wc -l )"
+      warntext="$( echo "$warns" | awk '{ print $2 }' FS='::' | head -3 )"
+      echo "Out of resource: $warncnt"
+      echo "$warntext"
+      break
+    fi
     podn="$( kubectl get pod -n minions | grep minion | wc -l | awk '{ print $1 }' )"
     podr="$( kubectl get pod -n minions | grep minion | grep Run | wc -l | awk '{ print $1 }' )"
     if [ $podr -ne $podn ]; then
@@ -71,6 +81,7 @@ cleanup () {
     break
   done
   
+  echo "Try end tests. do cleaning...."
   $masterdir/cleanup.sh
   
   # stop output
