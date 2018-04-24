@@ -15,6 +15,8 @@ t () {
   time=$2
   c=$3
   url=$4
+  RATE=$5
+  rate=${RATE:=0}
   out="$name-$time-$n"
   lsout="$( ls $base | grep -w $out  )"
   count="$( echo "$lsout" | wc -l | awk '{ print $1 }' )"
@@ -28,16 +30,19 @@ t () {
   outfile=$base/$out
   echo "start time: $( date +%F_%T )" >> $outfile
 
+  if [ "x$rate" = "x" ]; then
+    extra="-q $rate"
+  fi
   echo $time | grep -e '[a-z]' >/dev/null
   if [ $? -eq 0 ]; then
     unit="T=$time"
-    echo "hey -z $time -c $c $url >> $outfile" > $outfile
-    hey -z $time -c $c $url >> $outfile
+    echo "hey -z $time -c $c $extra $url >> $outfile" > $outfile
+    hey -z $time -c $c $extra $url >> $outfile
   else
     n="$( echo "$time * $c" | bc )"
     unit="N=$n"
-    echo "hey -n $n -c $c $url >> $outfile" > $outfile
-    hey -n $n -c $c $url >> $outfile
+    echo "hey -n $n -c $c $extra $url >> $outfile" > $outfile
+    hey -n $n -c $c $extra $url >> $outfile
   fi
     
   echo "end time: $( date +%F_%T )" >> $outfile
@@ -48,6 +53,6 @@ t () {
 }
 
 fs () {
-  t fs $1 $2 http://protest.wk.qianbao-inc.com
+  t fs $1 $2 http://protest.wk.qianbao-inc.com $3
 }
 
