@@ -13,7 +13,7 @@ if [ "x$ALLNODES" = "xfalse" ]; then
 $NODE
 "
 fi
-REPLICA=${REPLICA:=1}
+REPLICA=${REPLICA:=4}
 MEM=${MEM:=1G}
 resource="          resources:
             limits:

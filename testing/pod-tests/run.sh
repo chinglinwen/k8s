@@ -135,6 +135,21 @@ test6 () {
   cleanup
 }
 
+test7 () {
+  out test7
+  i=1
+  while true; do
+    if [ $i -gt 100 ]; then
+      break
+    fi
+    echo "Starting $i round...."
+    RESOURCE="#" N=$n4 ALLNODES=true ./run-minion-deploy-manner.sh
+    ((i++))
+  done
+  echo "Runned $i rounds:"
+  cleanup
+}
+
 testall(){
   echo
   echo "Doing all tests."
@@ -166,6 +181,7 @@ case $1 in
   4) test4 ;;  
   5) test5 ;;
   6) test6 ;;
+  7) test7 ;;
   *) testall ;;
 esac
 
