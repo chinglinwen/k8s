@@ -7,7 +7,7 @@ makebase () {
   base="$1"
   mkdir $base 2>/dev/null
   echo $base
-  echo "服务名	并发数	QPS"
+  echo "服务名	并发数	QPS	ok(200)	502	504"
 }
 
 t () {
@@ -24,7 +24,7 @@ t () {
   if [ "x$lsout" = "x" ]; then
     count=1
   fi
-  out="$name-$time-$n.$count.out"
+  out="$name-$time-$c.$count.out"
 
   #echo "start $name time=$time, concurrent=$n, output file=$out"
   outfile=$base/$out
@@ -47,9 +47,12 @@ t () {
     
   echo "end time: $( date +%F_%T )" >> $outfile
   
-  qps="$( grep Requests $outfile |awk '{ print $2 }' FS=':' |tr -d '\t' )" >>$outfile
-  echo -e "result:\t$name-$time-v$count($unit)\t$c\t$qps" >> $outfile
-  echo -e "$name-v$count($unit)\t$c\t$qps" 
+  qps="$( grep Requests $outfile |awk '{ print $2 }' FS=':' |tr -d '\t'|cut -d'.' -f1 )"
+  ok="$( grep '\[200\]' $outfile |awk '{ print $2 }' |tr -d '\t' )"
+  e502="$( grep '\[502\]' $outfile |awk '{ print $2 }' |tr -d '\t' )"
+  e504="$( grep '\[504\]' $outfile |awk '{ print $2 }' |tr -d '\t' )"
+  echo -e "result:\t$name-$time-v$count($unit)\t$c\t$qps\t$ok\t$e502\t$e504" >> $outfile
+  echo -e "$name-v$count($unit)\t$c\t$qps\t$ok\t$e502\t$e504" 
 }
 
 fs () {
