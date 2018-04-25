@@ -1,0 +1,141 @@
+[root@bjsh66-8-168 pod-tests]# FORMAL=true ./run.sh 2
+Start time: 1524641934608813989
+n1: 1000
+n2: 1000
+n3: 1000
+n4: 3000
+n5: 1000
+n6: 1000
+total number of pods: 33
+number of pod for node 10.66.0.10 : 8
+number of pod for node 10.66.0.11 : 5
+number of pod for node 10.66.0.12 : 10
+number of pod for node 10.66.0.18 : 10
+
+number of ip used: 45
+
+See http://10.66.193.138:8888/stats
+
+====== TEST: test2 ======
+Env setting: N=1000 RESOURCE=#
+
+Replica is: 3
+Resource: 
+#
+N: 1000
+Will create 1000 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+Out of resource: 1
+1h        1h        8         minion-44-333091213-km6qg   Pod                                                  Warning   FailedScheduling    default-scheduler        No nodes are available that match all of the following predicates:: Insufficient memory (1), MatchNodeSelector (3).
+stop create deploy at 40
+Out of resource: 4
+1h        1h        20        minion-43-4254503306-lx5s2   Pod                                    Warning   FailedSync       kubelet, 10.66.0.18   Error syncing pod, skipping: failed to "CreatePodSandbox" for "minion-43-4254503306-lx5s2_minions(42175822-4852-11e8-b678-ea02f3c19a05)" with CreatePodSandboxError: "CreatePodSandbox for pod \"minion-43-4254503306-lx5s2_minions(42175822-4852-11e8-b678-ea02f3c19a05)\" failed: rpc error: code = 2 desc = failed to start sandbox container for pod \"minion-43-4254503306-lx5s2\": Error response from daemon: {\"message\":\"no available IPv4 addresses on this network's address pools: bridge (ce5eaeba9c2df70fd35a0014c55c7f3fd520568cfcde7bc99cb717e027352d8e)\"}"
+1h        1h        20        minion-44-333091213-22jv4    Pod                                       Warning   FailedSync          kubelet, 10.66.0.18     Error syncing pod, skipping: failed to "CreatePodSandbox" for "minion-44-333091213-22jv4_minions(435d3189-4852-11e8-b678-ea02f3c19a05)" with CreatePodSandboxError: "CreatePodSandbox for pod \"minion-44-333091213-22jv4_minions(435d3189-4852-11e8-b678-ea02f3c19a05)\" failed: rpc error: code = 2 desc = failed to start sandbox container for pod \"minion-44-333091213-22jv4\": Error response from daemon: {\"message\":\"no available IPv4 addresses on this network's address pools: bridge (ce5eaeba9c2df70fd35a0014c55c7f3fd520568cfcde7bc99cb717e027352d8e)\"}"
+1h        1h        8         minion-44-333091213-clhdf   Pod                                                  Warning   FailedScheduling    default-scheduler        No nodes are available that match all of the following predicates:: Insufficient memory (1), MatchNodeSelector (3).
+1h        1h        8         minion-44-333091213-km6qg   Pod                                                  Warning   FailedScheduling    default-scheduler        No nodes are available that match all of the following predicates:: Insufficient memory (1), MatchNodeSelector (3).
+Try end tests. do cleaning....
+End results:
+	40 deployment(minion) running
+	108 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-5" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Something not cleaned up, see following ps output
+root     14401 22833  0 15:38 pts/2    00:00:00 /bin/sh ./run.sh 2
+root     21334 14401  0 15:44 pts/2    00:00:00 ps -ef
+root     21335 14401  0 15:44 pts/2    00:00:00 grep 14401
+./run.sh: 行 64: 14532 已终止               $base/kubectl_mon.py &>$resultdir/$item.out
+End time: 1524642268861182113

@@ -1,0 +1,428 @@
+[root@bjsh66-8-168 pod-tests]# FORMAL=true ./run.sh 5
+Start time: 1524647405932526950
+n1: 1000
+n2: 1000
+n3: 1000
+n4: 3000
+n5: 100
+n6: 100
+total number of pods: 33
+number of pod for node 10.66.0.10 : 8
+number of pod for node 10.66.0.11 : 5
+number of pod for node 10.66.0.12 : 10
+number of pod for node 10.66.0.18 : 10
+
+number of ip used: 45
+
+See http://10.66.193.138:8888/stats
+
+====== TEST: test5 ======
+replicationcontroller "minion" created
+
+will try to destroy 100 times...
+
+it's not running
+1 times of delete
+pod "minion-8tpxk" deleted
+it's not running
+it's not running
+2 times of delete
+pod "minion-6cwz4" deleted
+it's not running
+3 times of delete
+pod "minion-pnsq6" deleted
+it's not running
+4 times of delete
+pod "minion-qbp2d" deleted
+it's not running
+5 times of delete
+pod "minion-8j9zz" deleted
+it's not running
+it's not running
+6 times of delete
+pod "minion-mqv57" deleted
+it's not running
+7 times of delete
+pod "minion-wvrdf" deleted
+it's not running
+8 times of delete
+pod "minion-7st1g" deleted
+it's not running
+it's not running
+9 times of delete
+pod "minion-zp8xg" deleted
+it's not running
+10 times of delete
+pod "minion-n9vmm" deleted
+it's not running
+11 times of delete
+pod "minion-tmkqz" deleted
+it's not running
+it's not running
+12 times of delete
+pod "minion-46kz3" deleted
+it's not running
+13 times of delete
+pod "minion-gp1qx" deleted
+it's not running
+14 times of delete
+pod "minion-19l94" deleted
+it's not running
+it's not running
+15 times of delete
+pod "minion-0rgdr" deleted
+it's not running
+it's not running
+16 times of delete
+pod "minion-gz0r3" deleted
+it's not running
+17 times of delete
+pod "minion-cq5dz" deleted
+it's not running
+18 times of delete
+pod "minion-03kth" deleted
+it's not running
+it's not running
+it's not running
+19 times of delete
+pod "minion-tdcgw" deleted
+it's not running
+it's not running
+it's not running
+20 times of delete
+pod "minion-vxh4x" deleted
+it's not running
+it's not running
+it's not running
+21 times of delete
+pod "minion-r5qbr" deleted
+it's not running
+it's not running
+22 times of delete
+pod "minion-45cwf" deleted
+it's not running
+it's not running
+23 times of delete
+pod "minion-64zfb" deleted
+it's not running
+it's not running
+24 times of delete
+pod "minion-z27bq" deleted
+it's not running
+it's not running
+25 times of delete
+pod "minion-ztxxh" deleted
+it's not running
+it's not running
+26 times of delete
+pod "minion-snhg5" deleted
+it's not running
+27 times of delete
+pod "minion-zwwts" deleted
+it's not running
+it's not running
+28 times of delete
+pod "minion-rxbn9" deleted
+it's not running
+it's not running
+29 times of delete
+pod "minion-nglb5" deleted
+it's not running
+it's not running
+30 times of delete
+pod "minion-tjnvh" deleted
+it's not running
+31 times of delete
+pod "minion-5kzgv" deleted
+it's not running
+32 times of delete
+pod "minion-7pt79" deleted
+it's not running
+it's not running
+33 times of delete
+pod "minion-6p56w" deleted
+it's not running
+it's not running
+34 times of delete
+pod "minion-c62fp" deleted
+it's not running
+35 times of delete
+pod "minion-33tlm" deleted
+it's not running
+it's not running
+36 times of delete
+pod "minion-57z4v" deleted
+it's not running
+it's not running
+37 times of delete
+pod "minion-d3pvt" deleted
+it's not running
+38 times of delete
+pod "minion-xr8z2" deleted
+it's not running
+it's not running
+39 times of delete
+pod "minion-33s9j" deleted
+it's not running
+it's not running
+40 times of delete
+pod "minion-1fwh1" deleted
+it's not running
+41 times of delete
+pod "minion-wtvzv" deleted
+it's not running
+it's not running
+it's not running
+42 times of delete
+pod "minion-kg4x3" deleted
+it's not running
+it's not running
+43 times of delete
+pod "minion-skc0m" deleted
+it's not running
+it's not running
+44 times of delete
+pod "minion-0dpzb" deleted
+it's not running
+45 times of delete
+pod "minion-9s8g6" deleted
+it's not running
+46 times of delete
+pod "minion-qltnz" deleted
+it's not running
+it's not running
+47 times of delete
+pod "minion-22b2n" deleted
+it's not running
+it's not running
+it's not running
+48 times of delete
+pod "minion-cvjq2" deleted
+it's not running
+it's not running
+49 times of delete
+pod "minion-b2hqt" deleted
+it's not running
+it's not running
+50 times of delete
+pod "minion-qscwd" deleted
+it's not running
+51 times of delete
+pod "minion-x2s25" deleted
+it's not running
+it's not running
+52 times of delete
+pod "minion-3rhhr" deleted
+it's not running
+it's not running
+53 times of delete
+pod "minion-jbb3s" deleted
+it's not running
+54 times of delete
+pod "minion-wg9bq" deleted
+it's not running
+55 times of delete
+pod "minion-00cdj" deleted
+it's not running
+it's not running
+56 times of delete
+pod "minion-1p05s" deleted
+it's not running
+it's not running
+it's not running
+57 times of delete
+pod "minion-lfcm5" deleted
+it's not running
+it's not running
+58 times of delete
+pod "minion-wcr3s" deleted
+it's not running
+it's not running
+59 times of delete
+pod "minion-vx4dq" deleted
+it's not running
+it's not running
+60 times of delete
+pod "minion-6kgcm" deleted
+it's not running
+61 times of delete
+pod "minion-gchs4" deleted
+it's not running
+it's not running
+62 times of delete
+pod "minion-rr6bh" deleted
+it's not running
+it's not running
+63 times of delete
+pod "minion-0dl76" deleted
+it's not running
+64 times of delete
+pod "minion-bvb58" deleted
+it's not running
+65 times of delete
+pod "minion-7dwvm" deleted
+it's not running
+it's not running
+it's not running
+it's not running
+66 times of delete
+pod "minion-l834q" deleted
+it's not running
+it's not running
+67 times of delete
+pod "minion-9x4mx" deleted
+it's not running
+68 times of delete
+pod "minion-54j4p" deleted
+it's not running
+69 times of delete
+pod "minion-drmlc" deleted
+it's not running
+it's not running
+70 times of delete
+pod "minion-r5tn0" deleted
+it's not running
+it's not running
+71 times of delete
+pod "minion-g83jd" deleted
+it's not running
+it's not running
+72 times of delete
+pod "minion-w2b8n" deleted
+it's not running
+it's not running
+73 times of delete
+pod "minion-3cmzh" deleted
+it's not running
+74 times of delete
+pod "minion-389kb" deleted
+it's not running
+it's not running
+75 times of delete
+pod "minion-54jvc" deleted
+it's not running
+76 times of delete
+pod "minion-9s82t" deleted
+it's not running
+77 times of delete
+pod "minion-83z4x" deleted
+it's not running
+it's not running
+78 times of delete
+pod "minion-rbkvt" deleted
+it's not running
+it's not running
+it's not running
+79 times of delete
+pod "minion-rwsgh" deleted
+it's not running
+it's not running
+80 times of delete
+pod "minion-5c3c7" deleted
+it's not running
+it's not running
+81 times of delete
+pod "minion-j6xxr" deleted
+it's not running
+82 times of delete
+pod "minion-7qr68" deleted
+it's not running
+it's not running
+83 times of delete
+pod "minion-cfs5f" deleted
+it's not running
+84 times of delete
+pod "minion-25tvj" deleted
+it's not running
+it's not running
+85 times of delete
+pod "minion-hffj8" deleted
+it's not running
+it's not running
+it's not running
+86 times of delete
+pod "minion-4s68w" deleted
+it's not running
+it's not running
+87 times of delete
+pod "minion-ffrd7" deleted
+it's not running
+it's not running
+88 times of delete
+pod "minion-pksqj" deleted
+it's not running
+it's not running
+89 times of delete
+pod "minion-5phgh" deleted
+it's not running
+90 times of delete
+pod "minion-pdhfg" deleted
+it's not running
+91 times of delete
+pod "minion-zqbld" deleted
+it's not running
+it's not running
+92 times of delete
+pod "minion-vt0g4" deleted
+it's not running
+it's not running
+it's not running
+93 times of delete
+pod "minion-cqv5x" deleted
+it's not running
+94 times of delete
+pod "minion-hrq77" deleted
+it's not running
+it's not running
+95 times of delete
+pod "minion-07h4d" deleted
+it's not running
+it's not running
+96 times of delete
+pod "minion-d5f38" deleted
+it's not running
+97 times of delete
+pod "minion-mb7pb" deleted
+it's not running
+98 times of delete
+pod "minion-54gkx" deleted
+it's not running
+it's not running
+99 times of delete
+pod "minion-1gnmb" deleted
+it's not running
+it's not running
+100 times of delete
+pod "minion-lj06q" deleted
+it's not running
+complete 100 times of destroy.
+waiting up runining to 8
+waiting up runining to 4
+waiting up runining to 2
+ Try end tests. do cleaning....
+No resources found.
+End results:
+	0 deployment(minion) running
+	1 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+No resources found.
+replicationcontroller "minion" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Something not cleaned up, see following ps output
+root     17262 22833  0 17:10 pts/2    00:00:00 /bin/sh ./run.sh 5
+root     30298 17262  0 17:17 pts/2    00:00:00 ps -ef
+root     30299 17262  0 17:17 pts/2    00:00:00 grep 17262
+./run.sh: 行 64: 17496 已终止               $base/kubectl_mon.py &>$resultdir/$item.out
+End time: 1524647834216100188
