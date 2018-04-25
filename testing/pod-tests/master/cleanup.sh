@@ -1,12 +1,20 @@
 #!/bin/sh
 
+deploycnt="$( kubectl get deploy -n minions | grep minion | wc -l )"
+podscnt="$( kubectl get pods -n minions | grep minion | grep Run | wc -l )"
+echo "End results:"
+echo -e "\t$deploycnt deployment(minion) running"
+echo -e "\t$podscnt pods(minion) running"
+
+echo "Trying cleanup now."
+
+echo "Try cleanup sql..."
 cleanurl="http://$( kubectl get ep -n minions 2>/dev/null | grep 8888 | awk '{ print $2}' )/cleanup"
 curl -s $cleanurl &>/dev/null
 if [ $? -ne 0 ]; then
   echo "cleanup fail, may not exist"
-  exit 1
+  #exit 1
 fi
-echo "clean up sql done."
 
 echo "try cleanup deploy and pods..."
 kubectl get deploy -n minions | grep minion | awk '{ print $1 }' | xargs kubectl -n minions --force --grace-period=0 delete deploy 2>/dev/null

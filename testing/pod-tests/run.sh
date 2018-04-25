@@ -59,16 +59,16 @@ out(){
   $base/kubectl_mon.py &> $resultdir/$item.out &
 }
 
-initcnt="$( kubectl get event -n minions |grep Warn | wc -l  )"
+initcnt="$( kubectl get event -n minions |grep Warn | grep -v -e 'pull image' -e ErrImagePull -e ImagePullBackOff | wc -l )"
 ((initcnt++))
 cleanup () {
   while true; do
-    warns="$( kubectl get event -n minions |grep Warn | tail -n +$initcnt )"
-    if [ "x$warns" != "x" ]; then
+    warns="$( kubectl get event -n minions |grep Warn | grep -v -e 'pull image' -e ErrImagePull -e ImagePullBackOff | tail -n +$initcnt | grep Warn )"
+    if [ $? -eq 0 ]; then
       warncnt="$( echo "$warns" | awk '{ print $2 }' FS='::' | wc -l )"
-      warntext="$( echo "$warns" | awk '{ print $2 }' FS='::' | head -3 )"
+      #warntext="$( echo "$warns" | awk '{ print $2 }' FS='::' | head -3 )"
       echo "Out of resource: $warncnt"
-      echo "$warntext"
+      echo "$warns"
       break
     fi
     podn="$( kubectl get pod -n minions | grep minion | wc -l | awk '{ print $1 }' )"
@@ -144,10 +144,10 @@ test7 () {
     fi
     echo "Starting $i round...."
     RESOURCE="#" N=$n4 ALLNODES=true ./run-minion-deploy-manner.sh
+    cleanup
     ((i++))
   done
   echo "Runned $i rounds:"
-  cleanup
 }
 
 testall(){

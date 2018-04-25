@@ -13,7 +13,7 @@ if [ "x$ALLNODES" = "xfalse" ]; then
 $NODE
 "
 fi
-REPLICA=${REPLICA:=4}
+REPLICA=${REPLICA:=3}
 MEM=${MEM:=1G}
 resource="          resources:
             limits:
@@ -24,11 +24,16 @@ resource="          resources:
               memory: $MEM"
 RESOURCE=${RESOURCE:=$resource}
 
+echo "Replica is: $REPLICA"
+echo "Resource: 
+$RESOURCE"
+echo "N: $n"
+
 echo "Will create $n number of deployments"
 #echo "Start time: $(date "+%s%N")"
 
 
-initcnt="$( kubectl get event -n minions |grep Warn | wc -l  )"
+initcnt="$( kubectl get event -n minions |grep Warn | grep -v -e 'pull image' -e ErrImagePull -e ImagePullBackOff | wc -l )"
 ((initcnt++))
 
 for ((i=1;i <= $n;i++)) {
@@ -61,12 +66,13 @@ $RESOURCE
 $NODESELECT
 eof
 
-  warns="$( kubectl get event -n minions |grep Warn | tail -n +$initcnt )"
-  if [ "x$warns" != "x" ]; then
+  warns="$( kubectl get event -n minions |grep Warn | grep -v -e 'pull image' -e ErrImagePull -e ImagePullBackOff | tail -n +$initcnt | grep Warn )"
+  if [ $? -eq 0 ]; then
     warncnt="$( echo "$warns" | awk '{ print $2 }' FS='::' | wc -l )"
     warntext="$( echo "$warns" | awk '{ print $2 }' FS='::' | head -3 )"
     echo "Out of resource: $warncnt"
-    echo "$warntext"
+    #echo "$warntext"
+    echo "$warns"
     echo "stop create deploy at $i"
     break
   fi
