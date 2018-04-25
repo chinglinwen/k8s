@@ -19,6 +19,8 @@ COLORS = {
     'Running': '#50c878',
     'Terminating': '#a366ff',
     'Error': '#cc0000',
+    'ImagePullBackOff': '#FFB74D',
+    'ErrImagePull': '#FFD54F',
 }
 
 def main():
