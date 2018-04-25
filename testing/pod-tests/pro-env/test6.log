@@ -1,0 +1,864 @@
+[root@bjsh66-8-168 pod-tests]# FORMAL=true ./run.sh 6
+Start time: 1524647871942917481
+n1: 1000
+n2: 1000
+n3: 1000
+n4: 3000
+n5: 100
+n6: 100
+total number of pods: 33
+number of pod for node 10.66.0.10 : 8
+number of pod for node 10.66.0.11 : 5
+number of pod for node 10.66.0.12 : 10
+number of pod for node 10.66.0.18 : 10
+
+number of ip used: 45
+
+See http://10.66.193.138:8888/stats
+
+====== TEST: test6 ======
+Env setting: RESOURCE=#
+
+Replica is: 3
+Resource: 
+#
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+
+will try to destroy 100 times...
+
+1 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+2 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+3 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+4 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+5 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+6 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+7 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+8 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+9 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+10 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+11 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+12 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+13 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+14 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+15 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+16 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+17 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+18 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+19 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+20 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+21 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+22 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+23 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+24 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+25 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+26 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+27 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+28 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+29 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+30 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+31 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+32 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+33 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+34 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+35 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+36 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+37 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+38 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+39 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+40 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+41 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+42 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+43 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+44 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+45 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+46 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+47 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+48 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+49 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+50 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+deployment "minion-1" created
+51 times of delete
+deployment "minion-1" deleted
+Env setting: 
+
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1
+Will create 1 number of deployments
+
+^C
+[root@bjsh66-8-168 pod-tests]# 
+[root@bjsh66-8-168 pod-tests]# 
+[root@bjsh66-8-168 pod-tests]# master/cleanup.sh 
+No resources found.
+End results:
+	0 deployment(minion) running
+	0 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+No resources found.
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
