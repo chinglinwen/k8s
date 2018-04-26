@@ -59,22 +59,22 @@ out(){
   $base/kubectl_mon.py &> $resultdir/$item.out &
 }
 
-initcnt="$( kubectl get event -n minions |grep Warn | grep -v -e 'pull image' -e ErrImagePull -e ImagePullBackOff | wc -l )"
-((initcnt++))
+#initcnt="$( kubectl get event -n minions |grep Warn | grep -v -e 'pull image' -e ErrImagePull -e ImagePullBackOff | wc -l )"
+#((initcnt++))
 cleanup () {
   while true; do
-    warns="$( kubectl get event -n minions |grep Warn | grep -v -e 'pull image' -e ErrImagePull -e ImagePullBackOff | tail -n +$initcnt | grep Warn )"
-    if [ $? -eq 0 ]; then
-      warncnt="$( echo "$warns" | awk '{ print $2 }' FS='::' | wc -l )"
-      #warntext="$( echo "$warns" | awk '{ print $2 }' FS='::' | head -3 )"
-      echo "Out of resource: $warncnt"
-      echo "$warns"
-      break
-    fi
-    podn="$( kubectl get pod -n minions | grep minion | wc -l | awk '{ print $1 }' )"
-    podr="$( kubectl get pod -n minions | grep minion | grep Run | wc -l | awk '{ print $1 }' )"
+    #warns="$( kubectl get event -n minions |grep Warn | grep -v -e 'pull image' -e ErrImagePull -e ImagePullBackOff | tail -n +$initcnt | grep Warn )"
+    #if [ $? -eq 0 ]; then
+    #  warncnt="$( echo "$warns" | awk '{ print $2 }' FS='::' | wc -l )"
+    #  #warntext="$( echo "$warns" | awk '{ print $2 }' FS='::' | head -3 )"
+    #  echo "Out of resource: $warncnt"
+    #  echo "$warns"
+    #  break
+    #fi
+    podn="$( kubectl get pod -n minions | grep minion | grep -v Pend | wc -l | awk '{ print $1 }' )"
+    podr="$( kubectl get pod -n minions | grep minion | grep -v Pend | grep Run | wc -l | awk '{ print $1 }' )"
     if [ $podr -ne $podn ]; then
-      echo "waiting up runining to $podn"
+      echo "waiting up runining to $podn, current: $podr"
       sleep 1
       continue
     fi
