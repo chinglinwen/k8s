@@ -1,11 +1,12 @@
 [root@bjsh66-8-168 pod-tests]# FORMAL=true ./run.sh 3
-Start time: 1524724230322357701
+Start time: 1524732966044730059
 n1: 1000
 n2: 1000
 n3: 1000
 n4: 3000
 n5: 100
 n6: 50
+n7: 50
 total number of pods: 33
 number of pod for node 10.66.0.10 : 12
 number of pod for node 10.66.0.11 : 3
@@ -131,48 +132,16 @@ deployment "minion-98" created
 deployment "minion-99" created
 deployment "minion-100" created
 deployment "minion-101" created
-deployment "minion-102" created
-deployment "minion-103" created
-deployment "minion-104" created
-deployment "minion-105" created
-deployment "minion-106" created
-deployment "minion-107" created
-deployment "minion-108" created
-deployment "minion-109" created
-deployment "minion-110" created
-deployment "minion-111" created
-deployment "minion-112" created
-deployment "minion-113" created
-deployment "minion-114" created
-deployment "minion-115" created
-deployment "minion-116" created
-deployment "minion-117" created
-deployment "minion-118" created
-deployment "minion-119" created
-deployment "minion-120" created
-deployment "minion-121" created
-deployment "minion-122" created
-deployment "minion-123" created
-deployment "minion-124" created
-deployment "minion-125" created
-deployment "minion-126" created
-deployment "minion-127" created
-deployment "minion-128" created
-deployment "minion-129" created
-deployment "minion-130" created
-deployment "minion-131" created
-deployment "minion-132" created
-deployment "minion-133" created
-deployment "minion-134" created
-deployment "minion-135" created
-deployment "minion-136" created
-Out of resource: 1
-1h        1h        169       minion-fb585                 Pod                                                  Warning   FailedScheduling    default-scheduler        No nodes are available that match all of the following predicates:: MatchNodeSelector (2).
-stop create deploy at 136
+Out of resource: 3
+4h        4h        7         minion-65-741216101-8p2x1    Pod                                       Warning   FailedScheduling    default-scheduler       No nodes are available that match all of the following predicates:: Insufficient pods (2).
+4h        4h        7         minion-65-741216101-c3k69    Pod                                       Warning   FailedScheduling    default-scheduler       No nodes are available that match all of the following predicates:: Insufficient pods (2).
+3h        4h        169       minion-fb585                 Pod                                                  Warning   FailedScheduling    default-scheduler        No nodes are available that match all of the following predicates:: MatchNodeSelector (2).
+stop create deploy at 101
+waiting up runining to 300, current: 300, now ready to clean.
 Try end tests. do cleaning....
 End results:
-	136 deployment(minion) running
-	407 pods(minion) running
+	101 deployment(minion) running
+	300 pods(minion) running
 Trying cleanup now.
 Try cleanup sql...
 try cleanup deploy and pods...
@@ -180,44 +149,9 @@ deployment "minion-1" deleted
 deployment "minion-10" deleted
 deployment "minion-100" deleted
 deployment "minion-101" deleted
-deployment "minion-102" deleted
-deployment "minion-103" deleted
-deployment "minion-104" deleted
-deployment "minion-105" deleted
-deployment "minion-106" deleted
-deployment "minion-107" deleted
-deployment "minion-108" deleted
-deployment "minion-109" deleted
 deployment "minion-11" deleted
-deployment "minion-110" deleted
-deployment "minion-111" deleted
-deployment "minion-112" deleted
-deployment "minion-113" deleted
-deployment "minion-114" deleted
-deployment "minion-115" deleted
-deployment "minion-116" deleted
-deployment "minion-117" deleted
-deployment "minion-118" deleted
-deployment "minion-119" deleted
 deployment "minion-12" deleted
-deployment "minion-120" deleted
-deployment "minion-121" deleted
-deployment "minion-122" deleted
-deployment "minion-123" deleted
-deployment "minion-124" deleted
-deployment "minion-125" deleted
-deployment "minion-126" deleted
-deployment "minion-127" deleted
-deployment "minion-128" deleted
-deployment "minion-129" deleted
 deployment "minion-13" deleted
-deployment "minion-130" deleted
-deployment "minion-131" deleted
-deployment "minion-132" deleted
-deployment "minion-133" deleted
-deployment "minion-134" deleted
-deployment "minion-135" deleted
-deployment "minion-136" deleted
 deployment "minion-14" deleted
 deployment "minion-15" deleted
 deployment "minion-16" deleted
@@ -322,28 +256,11 @@ waiting minion deleting....
 waiting minion deleting....
 waiting minion deleting....
 waiting minion deleting....
-waiting minion deleting....
-waiting minion deleting....
 all minions deleted.
-
-用法：
- kill [选项] <pid|名称> [...]
-
-选项：
- -a, --all              不限于只对和当前进程的用户 id 相同的进程进行
-                        名称-进程id 转换
- -s, --signal <信号>     发送指定的信号
- -q, --queue <信号>      使用 sigqueue(2) 代替 kill(2)
- -p, --pid              打印 pid 而不向它们发送信号
- -l, --list [=<信号>]   列出信号名，或将一个信号转换为名称
- -L, --table            列出信号名和数值
-
- -h, --help     显示此帮助并退出
- -V, --version  输出版本信息并退出
-
-更多信息请参阅 kill(1)。
+./run.sh: 行 67: 12551 已终止               $base/kubectl_mon.py &>$resultdir/$item.out
 Something not cleaned up, see following ps output
-root     10457 25784  0 14:30 pts/1    00:00:00 /bin/sh ./run.sh 3
-root     32652 10457  0 14:58 pts/1    00:00:00 ps -ef
-root     32653 10457  0 14:58 pts/1    00:00:00 grep 10457
-End time: 152472592544768332
+root      4584 12404  0 17:26 pts/1    00:00:00 ps -ef
+root      4585 12404  0 17:26 pts/1    00:00:00 grep 12404
+root     12404 25784  0 16:56 pts/1    00:00:00 /bin/sh ./run.sh 3
+End time: 1524734771131720978
+
