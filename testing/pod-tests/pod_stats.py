@@ -21,6 +21,7 @@ COLORS = {
     'Error': '#cc0000',
     'ImagePullBackOff': '#FFB74D',
     'ErrImagePull': '#FFD54F',
+    'Unknown': '#AED581',
 }
 
 def main():
