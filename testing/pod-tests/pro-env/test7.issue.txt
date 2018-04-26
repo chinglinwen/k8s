@@ -1,0 +1,12 @@
+collect data have isssue
+
+1524669843.226642,minion-99-2844725114-8rs0c,Running
+1524669843.226642,minion-99-2844725114-wdvf3,Running
+Traceback (most recent call last):
+  File "/root/t/k8s/testing/pod-tests/kubectl_mon.py", line 27, in <module>
+    main()
+  File "/root/t/k8s/testing/pod-tests/kubectl_mon.py", line 24, in main
+    time.sleep(d)
+IOError: [Errno 22] Invalid argument
+(END)
+
