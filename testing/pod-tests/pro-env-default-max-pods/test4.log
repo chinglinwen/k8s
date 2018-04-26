@@ -1,0 +1,275 @@
+[root@bjsh66-8-168 pod-tests]# FORMAL=true ./run.sh 4
+Start time: 1524730597835081084
+n1: 1000
+n2: 1000
+n3: 1000
+n4: 3000
+n5: 100
+n6: 50
+n7: 50
+total number of pods: 33
+number of pod for node 10.66.0.10 : 12
+number of pod for node 10.66.0.11 : 3
+number of pod for node 10.66.0.12 : 15
+number of pod for node 10.66.0.18 : 3
+
+number of ip used: 45
+
+See http://10.66.193.15:8888/stats
+
+====== TEST: test4 ======
+Env setting: N=3000 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 3000
+Will create 3000 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+deployment "minion-51" created
+deployment "minion-52" created
+deployment "minion-53" created
+deployment "minion-54" created
+deployment "minion-55" created
+deployment "minion-56" created
+deployment "minion-57" created
+deployment "minion-58" created
+deployment "minion-59" created
+deployment "minion-60" created
+deployment "minion-61" created
+deployment "minion-62" created
+deployment "minion-63" created
+deployment "minion-64" created
+deployment "minion-65" created
+deployment "minion-66" created
+deployment "minion-67" created
+deployment "minion-68" created
+deployment "minion-69" created
+deployment "minion-70" created
+deployment "minion-71" created
+deployment "minion-72" created
+deployment "minion-73" created
+deployment "minion-74" created
+deployment "minion-75" created
+deployment "minion-76" created
+deployment "minion-77" created
+deployment "minion-78" created
+deployment "minion-79" created
+deployment "minion-80" created
+deployment "minion-81" created
+deployment "minion-82" created
+deployment "minion-83" created
+deployment "minion-84" created
+deployment "minion-85" created
+deployment "minion-86" created
+deployment "minion-87" created
+deployment "minion-88" created
+deployment "minion-89" created
+deployment "minion-90" created
+deployment "minion-91" created
+deployment "minion-92" created
+deployment "minion-93" created
+deployment "minion-94" created
+deployment "minion-95" created
+deployment "minion-96" created
+deployment "minion-97" created
+deployment "minion-98" created
+deployment "minion-99" created
+deployment "minion-100" created
+deployment "minion-101" created
+Out of resource: 3
+3h        3h        7         minion-65-741216101-8p2x1    Pod                                       Warning   FailedScheduling    default-scheduler       No nodes are available that match all of the following predicates:: Insufficient pods (2).
+3h        3h        7         minion-65-741216101-c3k69    Pod                                       Warning   FailedScheduling    default-scheduler       No nodes are available that match all of the following predicates:: Insufficient pods (2).
+2h        3h        169       minion-fb585                 Pod                                                  Warning   FailedScheduling    default-scheduler        No nodes are available that match all of the following predicates:: MatchNodeSelector (2).
+stop create deploy at 101
+waiting up runining to 300, current: 300, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	101 deployment(minion) running
+	300 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-100" deleted
+deployment "minion-101" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-51" deleted
+deployment "minion-52" deleted
+deployment "minion-53" deleted
+deployment "minion-54" deleted
+deployment "minion-55" deleted
+deployment "minion-56" deleted
+deployment "minion-57" deleted
+deployment "minion-58" deleted
+deployment "minion-59" deleted
+deployment "minion-6" deleted
+deployment "minion-60" deleted
+deployment "minion-61" deleted
+deployment "minion-62" deleted
+deployment "minion-63" deleted
+deployment "minion-64" deleted
+deployment "minion-65" deleted
+deployment "minion-66" deleted
+deployment "minion-67" deleted
+deployment "minion-68" deleted
+deployment "minion-69" deleted
+deployment "minion-7" deleted
+deployment "minion-70" deleted
+deployment "minion-71" deleted
+deployment "minion-72" deleted
+deployment "minion-73" deleted
+deployment "minion-74" deleted
+deployment "minion-75" deleted
+deployment "minion-76" deleted
+deployment "minion-77" deleted
+deployment "minion-78" deleted
+deployment "minion-79" deleted
+deployment "minion-8" deleted
+deployment "minion-80" deleted
+deployment "minion-81" deleted
+deployment "minion-82" deleted
+deployment "minion-83" deleted
+deployment "minion-84" deleted
+deployment "minion-85" deleted
+deployment "minion-86" deleted
+deployment "minion-87" deleted
+deployment "minion-88" deleted
+deployment "minion-89" deleted
+deployment "minion-9" deleted
+deployment "minion-90" deleted
+deployment "minion-91" deleted
+deployment "minion-92" deleted
+deployment "minion-93" deleted
+deployment "minion-94" deleted
+deployment "minion-95" deleted
+deployment "minion-96" deleted
+deployment "minion-97" deleted
+deployment "minion-98" deleted
+deployment "minion-99" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+
+用法：
+ kill [选项] <pid|名称> [...]
+
+选项：
+ -a, --all              不限于只对和当前进程的用户 id 相同的进程进行
+                        名称-进程id 转换
+ -s, --signal <信号>     发送指定的信号
+ -q, --queue <信号>      使用 sigqueue(2) 代替 kill(2)
+ -p, --pid              打印 pid 而不向它们发送信号
+ -l, --list [=<信号>]   列出信号名，或将一个信号转换为名称
+ -L, --table            列出信号名和数值
+
+ -h, --help     显示此帮助并退出
+ -V, --version  输出版本信息并退出
+
+更多信息请参阅 kill(1)。
+Something not cleaned up, see following ps output
+root      7304 14351  0 16:43 pts/1    00:00:00 ps -ef
+root      7305 14351  0 16:43 pts/1    00:00:00 grep 14351
+root     14351 25784  0 16:16 pts/1    00:00:00 /bin/sh ./run.sh 4
+End time: 1524732231659216492

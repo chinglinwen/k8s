@@ -9,6 +9,7 @@ if [ "x$FORMAL" = "x" ]; then
   n4=${N4:=3}
   n5=${N5:=3}
   n6=${N6:=3}
+  n7=${N7:=3}
 else
   n1=${N1:=1000}
   n2=${N2:=1000}
@@ -16,6 +17,7 @@ else
   n4=${N4:=3000}
   n5=${N5:=100}
   n6=${N6:=50}
+  n7=${N7:=50}
 fi
 
 echo "n1: $n1"
@@ -24,6 +26,7 @@ echo "n3: $n3"
 echo "n4: $n4"
 echo "n5: $n5"
 echo "n6: $n6"
+echo "n7: $n7"
 
 if [ ! -d master ]; then
   echo "master directory not found"
@@ -78,6 +81,7 @@ cleanup () {
       sleep 1
       continue
     fi
+    echo "waiting up runining to $podn, current: $podr, now ready to clean."
     break
   done
   
@@ -143,7 +147,7 @@ test7 () {
       break
     fi
     echo "Starting $i round...."
-    RESOURCE="#" N=$n4 ALLNODES=true ./run-minion-deploy-manner.sh
+    RESOURCE="#" N=$n7 ALLNODES=true ./run-minion-deploy-manner.sh
     cleanup
     ((i++))
   done

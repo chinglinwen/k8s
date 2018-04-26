@@ -8,6 +8,8 @@ n=${N:=1}
 ALLNODES=${ALLNODES:-false}
 
 if [ "x$ALLNODES" = "xfalse" ]; then
+  nodeip="$( kubectl get nodes -o yaml | grep kubernetes.io/hostname| head -1 | awk '{ print $2 }' FS=':' )"
+  echo "will run on single node only, select node is: $nodeip"
   NODE="  $( kubectl get nodes -o yaml | grep kubernetes.io/hostname| head -1 )"
   NODESELECT="      nodeSelector:
 $NODE

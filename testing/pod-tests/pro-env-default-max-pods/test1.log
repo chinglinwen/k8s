@@ -1,0 +1,129 @@
+[root@bjsh66-8-168 pod-tests]# FORMAL=true ./run.sh 1
+Start time: 1524728288421994988
+n1: 1000
+n2: 1000
+n3: 1000
+n4: 3000
+n5: 100
+n6: 50
+n7: 50
+total number of pods: 33
+number of pod for node 10.66.0.10 : 12
+number of pod for node 10.66.0.11 : 3
+number of pod for node 10.66.0.12 : 15
+number of pod for node 10.66.0.18 : 3
+
+number of ip used: 45
+
+See http://10.66.193.15:8888/stats
+
+====== TEST: test1 ======
+Env setting: N=1000
+
+will run on single node only, select node is:  10.66.0.10
+Replica is: 3
+Resource: 
+          resources:
+            limits:
+              #cpu: 2
+              memory: 1G
+            requests:
+              #cpu: 500m
+              memory: 1G
+N: 1000
+Will create 1000 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+Out of resource: 1
+2h        2h        169       minion-fb585                 Pod                                                  Warning   FailedScheduling    default-scheduler        No nodes are available that match all of the following predicates:: MatchNodeSelector (2).
+stop create deploy at 33
+waiting up runining to 98, current: 98, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	33 deployment(minion) running
+	98 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-4" deleted
+deployment "minion-5" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Something not cleaned up, see following ps output
+root     17828 25784  0 15:38 pts/1    00:00:00 /bin/sh ./run.sh 1
+root     27783 17828  0 15:46 pts/1    00:00:00 ps -ef
+root     27784 17828  0 15:46 pts/1    00:00:00 grep 17828
+./run.sh: 行 67: 17999 已终止               $base/kubectl_mon.py &>$resultdir/$item.out
+End time: 1524728805741998348
