@@ -1,0 +1,47 @@
+hey -n 20000 -c 1000  http://172.28.40.251:8000 >> data-172.28.40.251:8000/fs-20000-1000.1.out
+
+Summary:
+  Total:	1.6390 secs
+  Slowest:	0.1879 secs
+  Fastest:	0.0003 secs
+  Average:	0.0756 secs
+  Requests/sec:	12202.2072
+  
+
+Response time histogram:
+  0.000 [1]	|
+  0.019 [1826]	|∎∎∎∎∎
+  0.038 [338]	|∎
+  0.057 [1052]	|∎∎∎
+  0.075 [2088]	|∎∎∎∎∎∎
+  0.094 [13766]	|∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  0.113 [774]	|∎∎
+  0.132 [44]	|
+  0.150 [27]	|
+  0.169 [17]	|
+  0.188 [67]	|
+
+
+Latency distribution:
+  10% in 0.0304 secs
+  25% in 0.0731 secs
+  50% in 0.0861 secs
+  75% in 0.0903 secs
+  90% in 0.0929 secs
+  95% in 0.0940 secs
+  99% in 0.1069 secs
+
+Details (average, fastest, slowest):
+  DNS+dialup:	0.0008 secs, 0.0003 secs, 0.1879 secs
+  DNS-lookup:	0.0000 secs, 0.0000 secs, 0.0000 secs
+  req write:	0.0001 secs, 0.0000 secs, 0.0149 secs
+  resp wait:	0.0744 secs, 0.0003 secs, 0.1848 secs
+  resp read:	0.0001 secs, 0.0000 secs, 0.0130 secs
+
+Status code distribution:
+  [200]	20000 responses
+
+
+
+end time: 2018-04-27_16:21:32
+result:	fs-20000-v1(N=20000)	1000	12202	20000		
