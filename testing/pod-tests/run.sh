@@ -10,6 +10,7 @@ if [ "x$FORMAL" = "x" ]; then
   n5=${N5:=3}
   n6=${N6:=3}
   n7=${N7:=3}
+  t7=${T7:=2}
 else
   n1=${N1:=1000}
   n2=${N2:=1000}
@@ -18,6 +19,7 @@ else
   n5=${N5:=100}
   n6=${N6:=50}
   n7=${N7:=50}
+  t7=${T7:=30}
 fi
 
 echo "n1: $n1"
@@ -26,7 +28,7 @@ echo "n3: $n3"
 echo "n4: $n4"
 echo "n5: $n5"
 echo "n6: $n6"
-echo "n7: $n7"
+echo "n7: $n7, t7: $t7"
 
 if [ ! -d master ]; then
   echo "master directory not found"
@@ -88,8 +90,10 @@ cleanup () {
   echo "Try end tests. do cleaning...."
   $masterdir/cleanup.sh
   
-  # stop output
-  ps -ef|grep kubectl_mon.py | grep -v grep | awk '{ print $2 }' | xargs kill
+  echo "Try stop output..."
+  if [ "x$1" != "xkeepoutput" ]; then
+    ps -ef|grep kubectl_mon.py | grep -v grep | awk '{ print $2 }' | xargs kill
+  fi
   
   cnt="$( ps -ef | grep $$ | grep -v -w -e grep -e 'ps -ef' -e tail -e wc -e awk | wc -l | awk '{ print $1 }' )"
   if [ $cnt -ne 1 ]; then
@@ -143,15 +147,17 @@ test7 () {
   out test7
   i=1
   while true; do
-    if [ $i -gt 100 ]; then
+    if [ $i -gt $t7 ]; then
       break
     fi
     echo "Starting $i round...."
     RESOURCE="#" N=$n7 ALLNODES=true ./run-minion-deploy-manner.sh
-    cleanup
+    cleanup keepoutput
     ((i++))
   done
   echo "Runned $i rounds:"
+  echo "Do test7 cleanup"
+  cleanup
 }
 
 testall(){
