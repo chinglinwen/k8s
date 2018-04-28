@@ -41,8 +41,7 @@ fs 20000 1000
 fs 20000 1500
 fs 20000 2000
 fs 20000 3000
-#fs 20000 4000
-#fs 20000 5000
+fs 2000000 3000
 
 pid="$( ps -ef|grep 'tail -f' |grep -v grep | awk '{ print $2 }' )"
 kill $pid
