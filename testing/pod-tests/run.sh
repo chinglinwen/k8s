@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Start time: $(date "+%s%N")"
+echo "Start time: $(date +%F_%T )"
 
 if [ "x$FORMAL" = "x" ]; then
   n1=${N1:=3}
@@ -195,6 +195,6 @@ case $1 in
   *) testall ;;
 esac
 
-echo "End time: $(date "+%s%N")"
+echo "End time: $( date +%F_%T )"
 
 # end.

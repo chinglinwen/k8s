@@ -30,6 +30,8 @@ exec 6>&1
 exec > $log
 tail -f $log >&2 &
 
+echo "Start time: $( date +%F_%T )"
+
 fs 20000 10 
 fs 20000 50
 fs 20000 100
@@ -43,6 +45,9 @@ fs 20000 2000
 fs 20000 3000
 fs 2000000 3000
 
+echo "End time: $( date +%F_%T )"
+
 pid="$( ps -ef|grep 'tail -f' |grep -v grep | awk '{ print $2 }' )"
 kill $pid
 exec 1>&6 6>&-
+
