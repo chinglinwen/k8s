@@ -1,0 +1,4083 @@
+Start time: 1524841277856927404
+n1: 1000
+n2: 1000
+n3: 1000
+n4: 3000
+n5: 100
+n6: 50
+n7: 50, t7: 30
+total number of pods: 33
+number of pod for node 10.66.0.10 : 11
+number of pod for node 10.66.0.11 : 6
+number of pod for node 10.66.0.12 : 13
+number of pod for node 10.66.0.18 : 3
+
+number of ip used: 44
+
+See http://10.66.193.15:8888/stats
+
+====== TEST: test7 ======
+Starting 1 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 149, current: 147
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22682     1  0 23:01 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 23:01 ?        00:00:00 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+root     28692 22682  0 23:05 ?        00:00:00 ps -ef
+root     28693 22682  0 23:05 ?        00:00:00 grep 22682
+Starting 2 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root      3330 22682  0 23:11 ?        00:00:00 ps -ef
+root      3331 22682  0 23:11 ?        00:00:00 grep 22682
+root     22682     1  0 23:01 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 23:01 ?        00:00:01 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 3 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     11146 22682  0 23:17 ?        00:00:00 ps -ef
+root     11147 22682  0 23:17 ?        00:00:00 grep 22682
+root     22682     1  0 23:01 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 23:01 ?        00:00:02 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 4 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 149
+waiting up runining to 150, current: 149
+waiting up runining to 150, current: 149
+waiting up runining to 150, current: 149
+waiting up runining to 150, current: 149
+waiting up runining to 150, current: 149
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     20250 22682  0 23:24 ?        00:00:00 ps -ef
+root     20251 22682  0 23:24 ?        00:00:00 grep 22682
+root     22682     1  0 23:01 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 23:01 ?        00:00:04 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 5 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22682     1  0 23:01 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 23:01 ?        00:00:05 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+root     29828 22682  0 23:32 ?        00:00:00 ps -ef
+root     29829 22682  0 23:32 ?        00:00:00 grep 22682
+Starting 6 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root      7668 22682  0 23:41 ?        00:00:00 ps -ef
+root      7669 22682  0 23:41 ?        00:00:00 grep 22682
+root     22682     1  0 23:01 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 23:01 ?        00:00:06 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 7 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     18833 22682  0 23:51 ?        00:00:00 ps -ef
+root     18834 22682  0 23:51 ?        00:00:00 grep 22682
+root     22682     1  0 23:01 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 23:01 ?        00:00:08 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 8 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:10 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+root     30772 22682  0 00:01 ?        00:00:00 ps -ef
+root     30773 22682  0 00:01 ?        00:00:00 grep 22682
+Starting 9 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     11220 22682  0 00:12 ?        00:00:00 ps -ef
+root     11221 22682  0 00:12 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:11 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 10 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:13 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+root     24678 22682  0 00:24 ?        00:00:00 ps -ef
+root     24679 22682  0 00:24 ?        00:00:00 grep 22682
+Starting 11 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root      6566 22682  0 00:37 ?        00:00:00 ps -ef
+root      6567 22682  0 00:37 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:15 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 12 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     21551 22682  0 00:50 ?        00:00:00 ps -ef
+root     21552 22682  0 00:50 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:18 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 13 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 149
+waiting up runining to 150, current: 149
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root      4969 22682  0 01:04 ?        00:00:00 ps -ef
+root      4970 22682  0 01:04 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:20 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 14 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 149
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     21387 22682  0 01:19 ?        00:00:00 ps -ef
+root     21388 22682  0 01:19 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:22 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 15 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root      6278 22682  0 01:35 ?        00:00:00 ps -ef
+root      6279 22682  0 01:35 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:25 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 16 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:27 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+root     24419 22682  0 01:51 ?        00:00:00 ps -ef
+root     24420 22682  0 01:51 ?        00:00:00 grep 22682
+Starting 17 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     10759 22682  0 02:08 ?        00:00:00 ps -ef
+root     10760 22682  0 02:08 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:30 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 18 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:33 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+root     30122 22682  0 02:26 ?        00:00:00 ps -ef
+root     30123 22682  0 02:26 ?        00:00:00 grep 22682
+Starting 19 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     18436 22682  0 02:45 ?        00:00:00 ps -ef
+root     18437 22682  0 02:45 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:36 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 20 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root      7318 22682  0 03:04 ?        00:00:00 ps -ef
+root      7319 22682  0 03:04 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:39 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 21 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:43 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+root     30402 22682  0 03:26 ?        00:00:00 ps -ef
+root     30403 22682  0 03:26 ?        00:00:00 grep 22682
+Starting 22 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22201 22682  0 03:48 ?        00:00:00 ps -ef
+root     22202 22682  0 03:48 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:47 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 23 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     13952 22682  0 04:10 ?        00:00:00 ps -ef
+root     13953 22682  0 04:10 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:50 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 24 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root      5834 22682  0 04:33 ?        00:00:00 ps -ef
+root      5835 22682  0 04:33 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:54 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+Starting 25 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     22790 22682  0 Apr27 ?        00:00:57 /bin/python /root/t/k8s/testing/pod-tests/kubectl_mon.py
+root     30508 22682  0 04:56 ?        00:00:00 ps -ef
+root     30509 22682  0 04:56 ?        00:00:00 grep 22682
+Starting 26 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     21790 22682  0 05:20 ?        00:00:00 ps -ef
+root     21791 22682  0 05:20 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+Starting 27 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root       560 22682  0 05:44 ?        00:00:00 ps -ef
+root       561 22682  0 05:44 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+Starting 28 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     12348 22682  0 06:09 ?        00:00:00 ps -ef
+root     12349 22682  0 06:09 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+Starting 29 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+root     24212 22682  0 06:34 ?        00:00:00 ps -ef
+root     24213 22682  0 06:34 ?        00:00:00 grep 22682
+Starting 30 round....
+Env setting: N=50 RESOURCE=# ALLNODES=true
+
+Replica is: 3
+Resource: 
+#
+N: 50
+Will create 50 number of deployments
+deployment "minion-1" created
+deployment "minion-2" created
+deployment "minion-3" created
+deployment "minion-4" created
+deployment "minion-5" created
+deployment "minion-6" created
+deployment "minion-7" created
+deployment "minion-8" created
+deployment "minion-9" created
+deployment "minion-10" created
+deployment "minion-11" created
+deployment "minion-12" created
+deployment "minion-13" created
+deployment "minion-14" created
+deployment "minion-15" created
+deployment "minion-16" created
+deployment "minion-17" created
+deployment "minion-18" created
+deployment "minion-19" created
+deployment "minion-20" created
+deployment "minion-21" created
+deployment "minion-22" created
+deployment "minion-23" created
+deployment "minion-24" created
+deployment "minion-25" created
+deployment "minion-26" created
+deployment "minion-27" created
+deployment "minion-28" created
+deployment "minion-29" created
+deployment "minion-30" created
+deployment "minion-31" created
+deployment "minion-32" created
+deployment "minion-33" created
+deployment "minion-34" created
+deployment "minion-35" created
+deployment "minion-36" created
+deployment "minion-37" created
+deployment "minion-38" created
+deployment "minion-39" created
+deployment "minion-40" created
+deployment "minion-41" created
+deployment "minion-42" created
+deployment "minion-43" created
+deployment "minion-44" created
+deployment "minion-45" created
+deployment "minion-46" created
+deployment "minion-47" created
+deployment "minion-48" created
+deployment "minion-49" created
+deployment "minion-50" created
+waiting up runining to 150, current: 150, now ready to clean.
+Try end tests. do cleaning....
+End results:
+	50 deployment(minion) running
+	150 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+deployment "minion-1" deleted
+deployment "minion-10" deleted
+deployment "minion-11" deleted
+deployment "minion-12" deleted
+deployment "minion-13" deleted
+deployment "minion-14" deleted
+deployment "minion-15" deleted
+deployment "minion-16" deleted
+deployment "minion-17" deleted
+deployment "minion-18" deleted
+deployment "minion-19" deleted
+deployment "minion-2" deleted
+deployment "minion-20" deleted
+deployment "minion-21" deleted
+deployment "minion-22" deleted
+deployment "minion-23" deleted
+deployment "minion-24" deleted
+deployment "minion-25" deleted
+deployment "minion-26" deleted
+deployment "minion-27" deleted
+deployment "minion-28" deleted
+deployment "minion-29" deleted
+deployment "minion-3" deleted
+deployment "minion-30" deleted
+deployment "minion-31" deleted
+deployment "minion-32" deleted
+deployment "minion-33" deleted
+deployment "minion-34" deleted
+deployment "minion-35" deleted
+deployment "minion-36" deleted
+deployment "minion-37" deleted
+deployment "minion-38" deleted
+deployment "minion-39" deleted
+deployment "minion-4" deleted
+deployment "minion-40" deleted
+deployment "minion-41" deleted
+deployment "minion-42" deleted
+deployment "minion-43" deleted
+deployment "minion-44" deleted
+deployment "minion-45" deleted
+deployment "minion-46" deleted
+deployment "minion-47" deleted
+deployment "minion-48" deleted
+deployment "minion-49" deleted
+deployment "minion-5" deleted
+deployment "minion-50" deleted
+deployment "minion-6" deleted
+deployment "minion-7" deleted
+deployment "minion-8" deleted
+deployment "minion-9" deleted
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+waiting minion deleting....
+all minions deleted.
+Try stop output...
+Something not cleaned up, see following ps output
+root      4105 22682  0 07:01 ?        00:00:00 ps -ef
+root      4106 22682  0 07:01 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+Runned 31 rounds:
+Do test7 cleanup
+waiting up runining to 0, current: 0, now ready to clean.
+Try end tests. do cleaning....
+No resources found.
+End results:
+	0 deployment(minion) running
+	0 pods(minion) running
+Trying cleanup now.
+Try cleanup sql...
+try cleanup deploy and pods...
+No resources found.
+all minions deleted.
+Try stop output...
+
+Usage:
+ kill [options] <pid|name> [...]
+
+Options:
+ -a, --all              do not restrict the name-to-pid conversion to processes
+                        with the same uid as the present process
+ -s, --signal <sig>     send specified signal
+ -q, --queue <sig>      use sigqueue(2) rather than kill(2)
+ -p, --pid              print pids without signaling them
+ -l, --list [=<signal>] list signal names, or convert one to a name
+ -L, --table            list signal names and numbers
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see kill(1).
+Something not cleaned up, see following ps output
+root      4274 22682  0 07:01 ?        00:00:00 ps -ef
+root      4275 22682  0 07:01 ?        00:00:00 grep 22682
+root     22682     1  0 Apr27 ?        00:00:00 /bin/sh ./run.sh 7
+End time: 1524870074547800310
