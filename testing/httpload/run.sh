@@ -20,16 +20,14 @@ fs () {
   t fs $1 $2 $target $4
 }
 
+name="$( echo $target | awk '{ print $2 }' FS='//' )"
+#makebase "$service-$name-$( date +%F_%H%M%S )"
+makebase "$service-$name"
+
 log=$base/test.log
 exec 6>&1
 exec > $log
 tail -f $log >&2 &
-
-echo "Start time: $( date +%F_%T )"
-
-name="$( echo $target | awk '{ print $2 }' FS='//' )"
-#makebase "$service-$name-$( date +%F_%H%M%S )"
-makebase "$service-$name"
 
 fs 20000 10 
 fs 20000 50

@@ -7,6 +7,7 @@ makebase () {
   base="$1"
   mkdir $base 2>/dev/null
   echo "hey tests: $base"
+  echo "Start time: $( date +%F_%T )"
   echo "服务名	并发数	QPS	ok(200)	502	504"
 }
 
