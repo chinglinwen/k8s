@@ -7,8 +7,9 @@ makebase () {
   base="$1"
   mkdir $base 2>/dev/null
   echo "hey tests: $base"
+  echo "current port 8000 connections: $( ss -an|grep 8000|wc -l )"
   echo "Start time: $( date +%F_%T )"
-  echo "服务名	并发数	QPS	ok(200)	502	504"
+  echo "服务名	并发数	QPS	ok(200)	502	504	error"
 }
 
 t () {
@@ -18,7 +19,7 @@ t () {
   url=$4
   RATE=$5
   rate=${RATE:=0}
-  out="$name-$time-$n"
+  out="$name-$time-$c"
   lsout="$( ls $base | grep -w $out  )"
   count="$( echo "$lsout" | wc -l | awk '{ print $1 }' )"
   ((count++))
@@ -53,8 +54,17 @@ t () {
   elapse="$( grep Total $outfile |awk '{ print $2 }' FS=':' |tr -d '\t'|cut -d'.' -f1 )"
   e502="$( grep '\[502\]' $outfile |awk '{ print $2 }' |tr -d '\t' )"
   e504="$( grep '\[504\]' $outfile |awk '{ print $2 }' |tr -d '\t' )"
-  echo -e "result:\t$name-$time-v$count($unit)\t$c\t$qps\t$ok\t$e502\t$e504" >> $outfile
-  echo -e "$name-v$count($unit)\t$c\t$qps\t$ok\t$e502\t$e504" 
+  geterrlines="$( grep 'Get' $outfile | wc -l )"
+  geterrcnt="$( grep 'Get' $outfile | head -1 | awk '{ print $1 }' |tr -d '\t[]' )"
+  addrcnt="$( grep 'Get' $outfile | grep assign | awk '{ print $1 }' |tr -d '\t[]' )"
+  resetcnt="$( grep 'Get' $outfile | grep reset | wc -l )"
+
+  if [ $geterrlines -ne 0 ]; then
+    error="\terr:lines:$geterrlines,errcnt:$geterrcnt,addrcnt:$addrcnt,reset:$resetcnt"
+  fi
+  result="$name($unit)\t$c\t$qps\t$ok\t$e502\t$e504$error"
+  echo -e "result:\t$result"  >> $outfile
+  echo -e "$result"
 }
 
 
