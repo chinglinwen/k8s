@@ -58,9 +58,10 @@ t () {
   geterrcnt="$( grep 'Get' $outfile | head -1 | awk '{ print $1 }' |tr -d '\t[]' )"
   addrcnt="$( grep 'Get' $outfile | grep assign | awk '{ print $1 }' |tr -d '\t[]' )"
   resetcnt="$( grep 'Get' $outfile | grep reset | wc -l )"
+  timeoutcnt="$( grep 'Get' $outfile | grep Timeout | awk '{ print $1 }' |tr -d '\t[]' )"
 
   if [ $geterrlines -ne 0 ]; then
-    error="\terr:lines:$geterrlines,errcnt:$geterrcnt,addrcnt:$addrcnt,reset:$resetcnt"
+    error="\terr:lines:$geterrlines,errcnt:$geterrcnt,addrcnt:$addrcnt,reset:$resetcnt,timeoutcnt:$timeoutcnt"
   fi
   result="$name($unit)\t$c\t$qps\t$ok\t$e502\t$e504$error"
   echo -e "result:\t$result"  >> $outfile
