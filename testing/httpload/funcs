@@ -38,12 +38,12 @@ t () {
   echo $time | grep -e '[a-z]' >/dev/null
   if [ $? -eq 0 ]; then
     unit="T=$time"
-    echo "hey -z $time -c $c $extra $url >> $outfile" > $outfile
+    echo "hey -z $time -c $c $extra $url >> $outfile" >> $outfile
     hey -z $time -c $c $extra $url >> $outfile
   else
     n="$time"
     unit="N=$n"
-    echo "hey -n $n -c $c $extra $url >> $outfile" > $outfile
+    echo "hey -n $n -c $c $extra $url >> $outfile" >> $outfile
     hey -n $n -c $c $extra $url >> $outfile
   fi
     
