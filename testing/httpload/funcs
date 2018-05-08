@@ -10,7 +10,7 @@ makebase () {
   echo "current port 8000 connections: $( ss -an|grep 8000|wc -l )"
   echo "Start time: $( date +%F_%T )"
   #echo "服务名	并发数	QPS	ok(200)	502	504	error"
-  echo "服务名,并发数,QPS,OK(200),Total(secs),Avg(secs),percent10,percent25,percent50,percent75,percent90,percent95,percent99,502,504,error"
+  echo "服务名,并发数,QPS,OK(200),Total(secs),Avg(secs),percent10,percent25,percent50,percent75,percent90,percent95,percent99,502,504,addrcnt,timeoutcnt,resetcnt,errcnt,error"
 }
 
 t () {
@@ -50,6 +50,7 @@ t () {
     
   echo "end time: $( date +%F_%T )" >> $outfile
   
+  sleep 1
   qps="$( grep Requests $outfile |awk '{ print $2 }' FS=':' |tr -d '\t'|cut -d'.' -f1 )"
   avg="$( grep Average $outfile | awk '{ print $2 }' )"
   total="$( grep 'Total:' $outfile |awk '{ print $2 }' )"
@@ -74,7 +75,7 @@ t () {
   if [ $geterrlines -ne 0 ]; then
     error="err:lines:$geterrlines,errcnt:$geterrcnt,addrcnt:$addrcnt,reset:$resetcnt,timeoutcnt:$timeoutcnt"
   fi
-  result="$name($unit),$c,$qps,$ok,$total,$avg,$d10,$d25,$d50,$d75,$d90,$d95,$d99,$e502,$e504,$error"
+  result="$name($unit),$c,$qps,$ok,$total,$avg,$d10,$d25,$d50,$d75,$d90,$d95,$d99,$e502,$e504,$addrcnt,$timeoutcnt,$resetcnt,$errcnt,$error"
   echo -e "result:\t$result"  >> $outfile
   echo -e "$result"
 }
