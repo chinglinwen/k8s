@@ -9,7 +9,8 @@ makebase () {
   echo "hey tests: $base"
   echo "current port 8000 connections: $( ss -an|grep 8000|wc -l )"
   echo "Start time: $( date +%F_%T )"
-  echo "服务名	并发数	QPS	ok(200)	502	504	error"
+  #echo "服务名	并发数	QPS	ok(200)	502	504	error"
+  echo "服务名,并发数,QPS,OK(200),Total(secs),Avg(secs),percent10,percent25,percent50,percent75,percent90,percent95,percent99,502,504,error"
 }
 
 t () {
@@ -50,6 +51,16 @@ t () {
   echo "end time: $( date +%F_%T )" >> $outfile
   
   qps="$( grep Requests $outfile |awk '{ print $2 }' FS=':' |tr -d '\t'|cut -d'.' -f1 )"
+  avg="$( grep Average $outfile | awk '{ print $2 }' )"
+  total="$( grep 'Total:' $outfile |awk '{ print $2 }' )"
+  d10="$( grep '10%' $outfile |awk '{ print $3 }' )"
+  d25="$( grep '25%' $outfile |awk '{ print $3 }' )"
+  d50="$( grep '50%' $outfile |awk '{ print $3 }' )"
+  d75="$( grep '75%' $outfile |awk '{ print $3 }' )"
+  d90="$( grep '90%' $outfile |awk '{ print $3 }' )"
+  d95="$( grep '95%' $outfile |awk '{ print $3 }' )"
+  d99="$( grep '99%' $outfile |awk '{ print $3 }' )"
+
   ok="$( grep '\[200\]' $outfile |awk '{ print $2 }' |tr -d '\t' )"
   elapse="$( grep Total $outfile |awk '{ print $2 }' FS=':' |tr -d '\t'|cut -d'.' -f1 )"
   e502="$( grep '\[502\]' $outfile |awk '{ print $2 }' |tr -d '\t' )"
@@ -61,9 +72,9 @@ t () {
   timeoutcnt="$( grep 'Get' $outfile | grep Timeout | awk '{ print $1 }' |tr -d '\t[]' )"
 
   if [ $geterrlines -ne 0 ]; then
-    error="\terr:lines:$geterrlines,errcnt:$geterrcnt,addrcnt:$addrcnt,reset:$resetcnt,timeoutcnt:$timeoutcnt"
+    error="err:lines:$geterrlines,errcnt:$geterrcnt,addrcnt:$addrcnt,reset:$resetcnt,timeoutcnt:$timeoutcnt"
   fi
-  result="$name($unit)\t$c\t$qps\t$ok\t$e502\t$e504$error"
+  result="$name($unit),$c,$qps,$ok,$total,$avg,$d10,$d25,$d50,$d75,$d90,$d95,$d99,$e502,$e504,$error"
   echo -e "result:\t$result"  >> $outfile
   echo -e "$result"
 }
