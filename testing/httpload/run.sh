@@ -20,7 +20,7 @@ fs () {
   t fs $1 $2 $target $4
 }
 
-name="$( echo $target | awk '{ print $2 }' FS='//' | sed 's/:/\./' )"
+name="$( echo $target | awk '{ print $3 }' FS='/' )"
 #makebase "$service-$name-$( date +%F_%H%M%S )"
 makebase "$service-$name"
 
