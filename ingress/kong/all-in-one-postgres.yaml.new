@@ -121,6 +121,7 @@ spec:
     spec:
       accessModes:
         - "ReadWriteOnce"
+      storageClassName: rook-block
       resources:
         requests:
           storage: 1Gi
@@ -419,10 +420,12 @@ spec:
     port: 80
     targetPort: 8000
     protocol: TCP
+    nodePort: 80
   - name: kong-proxy-ssl
     port: 443
     targetPort: 8443
     protocol: TCP
+    nodePort: 443
   selector:
     app: kong
 

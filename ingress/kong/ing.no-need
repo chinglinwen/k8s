@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kong
+  namespace: kong
+spec:
+  rules:
+  - host: kong.service
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kong-proxy
+          servicePort: http
