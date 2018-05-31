@@ -1,0 +1,5 @@
+#server
+iperf3 -i 60 -s 0.0.0.0
+
+# client, run on same hosts with server, and remote hosts too
+iperf3 -c 172.28.44.76 -N -i 30 -t 10 -f m -w 512K -Z -P 8 -M 1492

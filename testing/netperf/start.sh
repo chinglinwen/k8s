@@ -1,3 +1,4 @@
+./loadstatus.sh  >> netperf.log
 echo "Start time: $( date +%F_%T )" >> netperf.log
 netperf -kubeConfig ~/.kube/config &>> netperf.log &
 tail -f netperf.log
