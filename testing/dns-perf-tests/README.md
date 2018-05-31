@@ -1,7 +1,8 @@
-# perf-tests
-Scripts and utilities for scale and performance testing of CoreDNS.
+# manual dns tests
+
+see [local-perf](/testing/dns-perf-tests/local-perf) for manual dns tests.
 
 
-# wen added
+## reference
 
-see local-perf for manual dns tests.
+<https://github.com/coredns/perf-tests>
