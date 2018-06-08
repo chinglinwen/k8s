@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  #namespace: qb-pro
+spec:
+  ports:
+  - name: http
+    targetPort: 80
+    port: 80
+  selector:
+    app: nginx
+  #sessionAffinity: ClientIP
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: nginx
+  #namespace: qb-pro
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: reg.qianbao-inc.com/k8s/nginx
+          ports:
+          - containerPort: 80
+
