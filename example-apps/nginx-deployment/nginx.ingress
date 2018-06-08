@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: fs
+  name: nginx
   #namespace: qb-pro
 spec:
   rules:
