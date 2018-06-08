@@ -1,5 +1,15 @@
 #!/bin/sh
 
+# assume docker is ready on every node
+./precheck.sh
+if [ $? -ne 0 ]; then
+  echo "precheck failed. exit"
+  exit 1
+fi
+
+# install kubeadm kubelet kubectl
+curl -s http://fs.qianbao-inc.com/k8s/kubeadm/install.sh | sh
+
 cat >kubeadm.conf <<eof
 apiVersion: kubeadm.k8s.io/v1alpha1
 kind: MasterConfiguration
@@ -14,10 +24,6 @@ eof
 
 
 kubeadm init --config=kubeadm.conf
-
-rm -rf /etc/kubernetes.old
-\mv -f /etc/kubernetes{,.old}
-systemctl stop kubelet
 
 cd ../../networking/kube-router/
 ./deploy.sh 
