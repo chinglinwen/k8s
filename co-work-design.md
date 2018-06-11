@@ -1,11 +1,14 @@
 # Co-work design ( draft )
 
 ## collaborate workflows design too
+
+How do we work together
+
 this need much work? robot tools, code review, git 
   
 plan first, everyone take a responsibilities, periodic share status
   
-use git to report the status, every can join for the feedbacks
+use git to report the status, everyone can join for the feedbacks
 
 ## stableness/reliabilities
 focus, make sure, thinking the whole line?
