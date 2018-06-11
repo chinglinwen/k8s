@@ -2,9 +2,9 @@
 
 ## collaborate workflows design too
 
-How do we work together
+How do we work together, gitea ( issues, label, milestones )
 
-this need much work? robot tools, code review, git 
+this need much work? robot tools, code review, git
   
 plan first, everyone take a responsibilities, periodic share status
   
