@@ -8,12 +8,12 @@
   //use git to report the status, every can join for the feedbacks
 
 ## stableness/reliabilities ( focus, make sure, thinking the whole line )?
-  //with all should be focus on this though
+//with all should be focus on this though
 
 ## fedoration? ( just to know more )
 
 ## upgrade ( lifecycle management, k8s new version research? )
-    //hpa ( auto scale? )
+//hpa ( auto scale? )
     
 ## monitoring ( more about business monitor ) ( and standardization )
 
@@ -29,7 +29,7 @@
 ## storage ( more about testing, know the internal too, handle much problems )
 
 ## k8s-internal ( unerstanding more about k8s, logic? component based first )
-  //this everyone need to know, at least basic concept
+//this everyone need to know, at least basic concept
 
 ## k8s-dns? ( monitoring, bug finding, testing, etc )
 
