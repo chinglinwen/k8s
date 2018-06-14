@@ -4,9 +4,9 @@
 
 How do we work together, gitea ( issues, label, milestones )
 
-this need much work? robot tools, code review, git
+this need much work? code review, git, robot tools? practice this often
   
-plan first, everyone take a responsibilities, periodic share status
+plan first, everyone attack an areas, periodic share status
   
 use git to report the status, everyone can join for the feedbacks
 
