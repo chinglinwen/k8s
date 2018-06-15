@@ -43,7 +43,7 @@ spec:
         imagePullPolicy: Always
         args:
         - --run-router=true
-        - --run-firewall=true
+        - --run-firewall=false
         - --run-service-proxy=true
         - --kubeconfig=/var/lib/kube-router/kubeconfig
         - --v=5

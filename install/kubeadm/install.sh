@@ -30,12 +30,14 @@ cd ../../networking/kube-router/
 cd -
 kubectl -n kube-system delete ds kube-proxy
 
+cat ./bridgeadd.txt
+
 echo
 echo "do the join on other nodes now, as kubeadm outputs"
 
 echo "example: kubeadm join 172.28.46.2:6443 --token scjvzq.xy07jw57187994pc --discovery-token-ca-cert-hash sha256:802678f862efff912bb8a849d1562574a28f6762b5a42702a60214e805b4a3aa --ignore-preflight-errors=cri"
 
-cat ./wait.sh
+cat ./wait.txt
 
 echo "installing... ui"
 cd ../../ui/
