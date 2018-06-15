@@ -43,3 +43,6 @@ echo "installing... ui"
 cd ../../ui/
 ./deploy.sh
 cd -
+
+echo 
+echo "do backup node join command."
