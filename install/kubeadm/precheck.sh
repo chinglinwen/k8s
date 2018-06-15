@@ -6,3 +6,12 @@ if [ $? -ne 0 ]; then
   echo "install by run ../docker/install.sh"
   exit 1
 fi
+
+( which kubeadm && which kubelet && which kubectl ) > /dev/null
+if [ $? -ne 0 ]; then
+  echo "exit."
+  exit 1
+fi
+
+#NOTE: assume bridge setting on everynode
+#NOTE: assume bond1 is ready

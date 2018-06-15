@@ -10,22 +10,12 @@ yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
 
-yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
-
+wget -O /etc/yum.repos.d/docker-ce.cn.repo http://fs.qianbao-inc.com/k8s/docker/docker-ce.cn.repo
 
 yum install docker-ce
-
-cat | tee /etc/docker/daemon.json <<eof
-{
-  "registry-mirrors": ["https://registry.docker-cn.com"]
-}
-eof
 
 systemctl daemon-reload
 systemctl restart docker
 systemctl enable docker
 systemctl status docker
-
 
