@@ -15,7 +15,7 @@ COPY . .
 CMD [ "python", "./your-daemon-or-script.py" ]
 ```
 
-# Example python build image and run
+## Example python build image and run
 
 ```
 $ docker build -t my-python-app .
