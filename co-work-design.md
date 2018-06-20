@@ -20,6 +20,12 @@ workflow smooth? platform change?
 ## k8s outer analysis
 how's our business apps like, does it fit, may also help other to jump in docker ?
 
+## Configuration
+Configmap, Find out a better solution? secret's security concern?
+
+## Logging
+Container logging persistent solution?
+
 ## example apps
 Create many examples ( need representative? ), see if something will go wrong
 
