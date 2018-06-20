@@ -2,9 +2,9 @@
 
 ## Design
 
-Task will be small ( if not, try make it small, and doable )
-Task will be record on our issue platform
-Anyone can join the process, even contribute ideas
+- Task will be small ( if not, try make it small, and doable )
+- Task will be record on our issue platform
+- Anyone can join the process, even contribute ideas
 
 ## Platform
 
