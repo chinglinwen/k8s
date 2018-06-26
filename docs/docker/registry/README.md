@@ -7,13 +7,13 @@
 
 https://pro-reg.qianbao-inc.com/
 
-ip: 172.28.40.90
+ip: 10.66.0.13
 
 ## 测试环境
 
 https://reg.qianbao-inc.com
 
-ip: 10.66.0.13
+ip: 172.28.40.90
 
 ## Jenkins
 
