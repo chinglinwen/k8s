@@ -33,7 +33,7 @@ iptables -nvL
 rm -rf /var/lib/cni/
 rm -rf /var/lib/kubelet/*
 
-ifconfig kube-bridge down
+#ifconfig kube-bridge down
 ifconfig kube-dummy-if down
 ifconfig docker0 down
 
