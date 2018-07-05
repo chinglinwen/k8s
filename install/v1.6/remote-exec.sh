@@ -1,12 +1,66 @@
 #!/bin/sh
+. ./env
 
-script="$1"
-if [ "x$script" = "x" ]; then
-  echo "script not provided, exit"
-  exit 1
-fi
-base="$( pwd|sed 's/k8s.*/k8s\/install/' )"
-while read line; do
-  host="$( echo $line | awk '{ print $2 }' )"
-  ssh $host "bash -s" < $script
-done < $base/masters.txt
+base="$( pwd | sed 's/k8s.*/k8s\/install\/v1.6/' )"
+
+e (){
+  list="$1"
+  script="$2"
+  while read host; do
+    ssh $host "bash -s" < "$script"
+  done <<eof
+$list
+eof
+}
+
+etcdlist="$ETCD1
+$ETCD2
+$ETCD3"
+
+masterlist="$MASTER1
+$MASTER2"
+
+nodelist="$NODE1
+$NODE2
+$NODE3"
+
+ee (){
+  e "$etcdlist" $1
+  echo
+  echo "etcd may need a little while to change to running status."
+}
+
+em (){
+  e "$masterlist" $1
+}
+
+en (){
+  e "$nodelist" $1
+}
+
+ea (){
+ ee $1
+ em $1
+ #en $1
+}
+
+doscp (){
+  src="$1"
+  dst="$2"
+  echo "src: $src, dst: $dst"
+  while read host; do
+    echo "start scp for host: $host"
+    scp -r $src $host:$dst
+  done <<eof
+$ETCD1
+$ETCD2
+$ETCD3
+$MASTER1
+$MASTER2
+eof
+
+#$NODE1
+#$NODE2
+#$NODE3
+#eof
+}

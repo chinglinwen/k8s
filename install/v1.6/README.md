@@ -2,6 +2,7 @@
 
 ## setup info
 vi env
+ENV=env ./prepare.sh
 
 ip info
 podcidr, cluster cidr, etc

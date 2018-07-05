@@ -1,0 +1,38 @@
+export ETCD1=10.64.11.25
+export ETCD2=10.64.11.26
+export ETCD3=10.64.11.29
+export VIP=10.64.11.200
+export MASTER1=10.64.11.27
+export MASTER2=10.64.11.28
+export NODE1=10.64.166.11
+export NODE2=10.64.166.12
+export NODE3=10.64.166.13
+
+export PODCIDR=
+
+export BOOTSTRAP_TOKEN="$( head -c 16 /dev/urandom | od -An -t x | tr -d ' ' )"
+export SERVICE_CIDR="10.254.0.0/16"
+export CLUSTER_CIDR="10.66.192.0/20"
+export GATEWAY="?"
+export SUBNET_LEN=25
+export NODE_PORT_RANGE="30000-32767"
+
+
+export ETCD_ENDPOINTS="https://$ETCD1:2379,https://$ETCD2:2379,https://$ETCD3:2379"
+export KUBERNETES_CLUSTER_NETWORK_PREFIX="/kubernetes/network"
+
+export CLUSTER_KUBERNETES_SVC_IP="10.254.0.1"
+export CLUSTER_DNS_SVC_IP="10.254.0.2"
+export CLUSTER_DNS_DOMAIN="wukong.local."
+
+export HOSTS="\"$VIP\",
+\"$MASTER1\",
+\"$MASTER2\",
+\"$ETCD1\",
+\"$ETCD2\",
+\"$ETCD3\",
+\"$NODE1\",
+\"$NODE2\",
+\"$NODE3\","
+
+export BASE="$( pwd | sed 's/k8s.*/k8s\/install\/v1.6/' )"

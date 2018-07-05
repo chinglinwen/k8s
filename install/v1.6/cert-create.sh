@@ -1,4 +1,5 @@
 #!/bin/sh
+. ./env
 
 # create cert
 
@@ -67,12 +68,7 @@ cat >kubernetes-csr.json<<EOF
 "CN": "kubernetes",
 "hosts": [
 "127.0.0.1",
-"10.66.8.168",
-"10.66.8.169",
-"10.66.8.170",
-"10.66.8.171",
-"10.66.8.172",
-"10.66.8.201",
+$HOSTS
 "10.254.0.1",
 "kubernetes",
 "kubernetes.default",
@@ -96,8 +92,7 @@ cat >kubernetes-csr.json<<EOF
 }
 EOF
 
-cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes
-kubernetes-csr.json | cfssljson -bare kubernetes
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes kubernetes-csr.json | cfssljson -bare kubernetes
 
 cat >admin-csr.json<<EOF
 {
@@ -119,8 +114,7 @@ cat >admin-csr.json<<EOF
 }
 EOF
 
-cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes
-admin-csr.json | cfssljson -bare admin
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes admin-csr.json | cfssljson -bare admin
 
 
 cat >kube-proxy-csr.json <<EOF
@@ -143,10 +137,17 @@ cat >kube-proxy-csr.json <<EOF
 }
 EOF
 
-cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes
-kube-proxy-csr.json | cfssljson -bare kube-proxy
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes kube-proxy-csr.json | cfssljson -bare kube-proxy
 
 mkdir -p /etc/kubernetes/ssl
-cp $sslbase/*.pem /etc/kubernetes/ssl
+cp $sslbase/* /etc/kubernetes/ssl
 
-#todo: need upload? copy to all nodes once for all,  ip need change
+
+cd -
+. $BASE/remote-exec.sh
+
+echo 'mkdir -p /etc/kubernetes/ssl' > /tmp/mkdir.sh
+ea /tmp/mkdir.sh
+doscp '/etc/kubernetes/ssl/*.pem' /etc/kubernetes/ssl/
+
+rm -f /tmp/mkdir.sh
