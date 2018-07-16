@@ -19,8 +19,10 @@ chmod 755 $kdir/bin/generate_subnet.py
 
 # all certs and tools need to be ready
 
-wget http://fs.qianbao-inc.com/k8s/install/v1.6/soft/etcdctl -O /usr/local/bin
-chmod 755 /usr/local/bin/etcdctl
+if [ ! -f /usr/local/bin/etcdctl ]; then
+  wget http://fs.qianbao-inc.com/k8s/install/v1.6/soft/etcdctl -O /usr/local/bin/etcdctl
+  chmod 755 /usr/local/bin/etcdctl
+fi
 
 
 ETCDCTL_API=3 etcdctl --endpoints=https://$ETCD1:2379 --cacert=/etc/kubernetes/ssl/ca.pem \

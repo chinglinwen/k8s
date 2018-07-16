@@ -1,5 +1,5 @@
 #!/bin/sh
-# install new kernel on nodes
+# install new kernel on nodes, this should execute by hands?
 
 
 # 安装新内核
@@ -17,21 +17,24 @@ cp -rfa /apps /apps.bak
 
 # df -h 查看/apps目录挂载的设备，然后umount
 # 需要结束掉heka进程，因为heka进程文件在/apps目录下
-umount /apps
 
 # 格式化
-mkfs.xfs -f -n ftype=1 /dev/sda5
+disk="$( df | grep apps | awk '{ print $1 }' )"
+if [ "x$disk" = "x" ]; then
+  echo "/apps disk part not exist, error"
+  exit 1
+fi
+systemctl stop hekaclient 2>/dev/null
+umount /apps
+mkfs.xfs -f -n ftype=1 $disk
 
 # 格式化磁盘后，磁盘的源UUID会改版，需要查找新的uuid，ls /dev/disk/by-uuid/ -lh
 # 然后修改/etc/fstab文件，替换UUID，然后需要重启系统才能生效
-ls -l /dev/disk/by-uuid |grep sda5
-vim /etc/fstab
-
-# 恢复数据
-ovs_config.sh
-5.47KB
-generate_subnet.py
-9.67KB
+cp /etc/fstab{,.bak}
+uuid="$( blkid /dev/sda5 | awk '{ print $2 }' FS='"' )"
+oldid="$( grep /apps /etc/fstab | awk '{ print $1 }' | cut -d'=' -f2 )"
+sed -i "s/$oldid/$uuid/" /etc/fstab
+mount -a
 
 mv /apps.bak/* /apps/
 

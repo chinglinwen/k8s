@@ -7,7 +7,11 @@ e (){
   list="$1"
   script="$2"
   while read host; do
-    ssh $host "bash -s" < "$script"
+    if [ -f "$script" ]; then
+      ssh $host "bash -s" < "$script"
+    else
+      ssh -f $host -C "$script"
+    fi
   done <<eof
 $list
 eof
@@ -38,10 +42,15 @@ en (){
   e "$nodelist" $1
 }
 
+# execute on single server
+eo (){
+  e "$MASTER1" $1
+}
+
 ea (){
  ee $1
  em $1
- #en $1
+ en $1
 }
 
 doscp (){
@@ -57,10 +66,8 @@ $ETCD2
 $ETCD3
 $MASTER1
 $MASTER2
+$NODE1
+$NODE2
+$NODE3
 eof
-
-#$NODE1
-#$NODE2
-#$NODE3
-#eof
 }
