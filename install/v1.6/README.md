@@ -4,24 +4,38 @@
 vi env
 ENV=env ./prepare.sh
 
-ip info
-podcidr, cluster cidr, etc
-
-this need upload too,
+> it will use fs.qianbao-inc.com service, software download etc.
 
 ## setup remote ssh without password
 
+copy id_rsa.pub to all server ( master and nodes )
+
 ## create cert
-create cert and do uploads, for later download
-or just copy to all machines
+
+```
+./cert-create.sh
+```
 
 ## install etcd
 
-## install ovs
+```
+. ./remote-exec.sh
+ee etcd-install.sh
+```
 
-## install docker
+if cert change, need restart etcd.
 
-## install kubelet and kube-proxy
+## install masters
 
-## install kube-apiserver, kube-controller-manager, kube-scheduler
+```
+./aster-install.sh
+```
 
+## install nodes ( ovs, docker, kubelet and kube-proxy )
+
+```
+node-install.sh
+```
+
+> docker may change route, it may make server unreachable. 
+> make sure info is correct, otherwise may need manage console to login.
