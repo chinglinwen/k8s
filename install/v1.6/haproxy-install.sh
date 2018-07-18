@@ -9,11 +9,9 @@ curl -so /tmp/k8senv http://fs.qianbao-inc.com/k8s/install/v1.6/env
 yum -y install keepalived haproxy
 systemctl enable keepalived
 systemctl enable haproxy
+
 echo 'net.ipv4.ip_nonlocal_bind = 1'>>/etc/sysctl.conf
 sysctl -p | grep bind
-
-download 
-
 
 IP="$( ip a | grep 'inet ' | grep -v -e docker -e 127.0.0.1 -e 'vir' | awk '{ print $2 }' | cut -f1 -d'/' )"
 
@@ -79,7 +77,6 @@ RestartSec=5
 [Install]
 WantedBy=multi-user.target
 eof
-
 
 
 cat > /etc/haproxy/haproxy.cfg<<eof

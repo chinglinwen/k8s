@@ -22,7 +22,7 @@ eof
 
 cat >/etc/sysconfig/ovs_config<<eof
 GENERATE_SUBNET_ARGS="-iface eth2 -addrs $ETCD1:2379,$ETCD2:2379,$ETCD3:2379"
-OVS_CONFIG_ARGS="--bond_iface bond0 --vlan_id 1237 --manage_iface eth2 --etcd_endpoints $ETCD_ENDPOINTS"
+OVS_CONFIG_ARGS="--bond_iface bond0 --vlan_id 1237 --manage_iface eth2 --manage_gateway=$MANAGE_GATEWAY --etcd_endpoints $ETCD_ENDPOINTS"
 eof
 
 
