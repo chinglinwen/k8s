@@ -4,6 +4,8 @@
 curl -so /tmp/k8senv http://fs.qianbao-inc.com/k8s/install/v1.6/env
 . /tmp/k8senv
 
+IP="$( ip a | grep 'inet ' | grep -v -e docker -e 127.0.0.1 -e 'vir' | awk '{ print $2 }' | cut -f1 -d'/' )"
+
 # need install kube bin
 kdir=/apps/soft/kubernetes
 mkdir -p $kdir
@@ -66,8 +68,8 @@ systemctl enable kubelet
 systemctl start kubelet
 
 # only one time?
-kubectl get csr
-kubectl certificate approve csr-2b308
+#kubectl get csr
+#kubectl certificate approve csr-2b308
 
 # kube-proxy
 

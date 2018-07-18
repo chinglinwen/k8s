@@ -47,7 +47,7 @@ kubectl config set-credentials kube-proxy --client-certificate=/etc/kubernetes/s
 kubectl config set-context default --cluster=kubernetes --user=kube-proxy --kubeconfig=kube-proxy.kubeconfig
 kubectl config use-context default --kubeconfig=kube-proxy.kubeconfig
 
-cp bootstrap.kubeconfig kube-proxy.kubeconfig token.csv /etc/kubernetes/
+cp -f bootstrap.kubeconfig kube-proxy.kubeconfig token.csv /etc/kubernetes/
 
 
 echo "starting create system service..."

@@ -1,9 +1,9 @@
-export ETCD1=10.64.11.25
-export ETCD2=10.64.11.26
-export ETCD3=10.64.11.29
-export VIP=10.64.11.200
-export MASTER1=10.64.11.27
-export MASTER2=10.64.11.28
+export ETCD1=10.64.167.13
+export ETCD2=10.64.167.14
+export ETCD3=10.64.167.15
+export VIP=10.64.167.200
+export MASTER1=10.64.167.11
+export MASTER2=10.64.167.12
 export NODE1=10.64.60.11
 export NODE2=10.64.60.12
 export NODE3=10.64.60.13
@@ -37,9 +37,10 @@ export HOSTS="\"$VIP\",
 
 export BASE="$( pwd | sed 's/k8s.*/k8s\/install\/v1.6/' )"
 
-BIP1="10.64.192.1/25"
-BIP2="10.64.193.1/25"
-BIP3="10.64.194.1/25"
+# 192.1/25 is not ok, already in use.
+BIP1="10.64.193.1/25"
+BIP2="10.64.194.1/25"
+BIP3="10.64.195.1/25"
 
 IP="$( ip a | grep 'inet ' | grep -v -e docker -e 127.0.0.1 -e 'vir' | awk '{ print $2 }' | cut -f1 -d'/' )"
 case $IP in

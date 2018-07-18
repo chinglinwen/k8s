@@ -25,10 +25,7 @@ if [ ! -f /usr/local/bin/etcdctl ]; then
 fi
 
 
-ETCDCTL_API=3 etcdctl --endpoints=https://$ETCD1:2379 --cacert=/etc/kubernetes/ssl/ca.pem \
-  --cert=/etc/kubernetes/ssl/kubernetes.pem --key=/etc/kubernetes/ssl/kubernetes-key.pem \
-  put /kubernetes/network/config '{"Network":"$CLUSTER_CIDR", "Gateway":"$GATEWAY", "SubnetLen": $SUBNET_LEN}'
-
+# etcd /kubernetes/network/config will store network info after master install.
 
 mkdir -p ~/.pip
 cat > ~/.pip/pip.conf <<EOF
