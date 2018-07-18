@@ -2,6 +2,7 @@
 
 ## setup info
 vi env
+
 ENV=env ./prepare.sh
 
 > it will use fs.qianbao-inc.com service, software download etc.
@@ -38,4 +39,5 @@ node-install.sh
 ```
 
 > docker may change route, it may make server unreachable. 
+> 
 > make sure info is correct, otherwise may need manage console to login.
