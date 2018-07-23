@@ -41,3 +41,6 @@ node-install.sh
 > docker may change route, it may make server unreachable. 
 > 
 > make sure info is correct, otherwise may need manage console to login.
+
+
+Reference docs: [独立部署v1.6.pdf](/docs/install/kubernetes 独立部署v1.6.pdf) by xigui
