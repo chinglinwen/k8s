@@ -7,6 +7,9 @@ yum install -y http://fs.qianbao-inc.com/k8s/kubeadm/kubeadm-1.10.2-0.x86_64.rpm
 
 setenforce 0
 
+# kubeadm init need this too
+swapoff -a
+
 sysctl -a|grep bridge-nf-call-ip  # usually ok
 
 sed -i "s/cgroup-driver=systemd/cgroup-driver=cgroupfs/g" /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
