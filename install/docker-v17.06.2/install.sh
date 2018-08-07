@@ -10,8 +10,7 @@ fi
 
 cat >/etc/sysconfig/docker<<"eof"
 DOCKER_OPTS="--registry-mirror=https://registry.docker-cn.com --live-restore=true --ip-masq=false --iptables=false  --log-level=info --userland-proxy=true --log-driver=json-file --log-opt=max-size=100m --log-opt=max-file=5"
-#DOCKER_STORAGE_OPTIONS="--data-root=/apps/docker --storage-driver=overlay2"
-DOCKER_STORAGE_OPTIONS="--data-root=/apps/docker"
+DOCKER_STORAGE_OPTIONS="--data-root=/apps/docker --storage-driver=overlay2"
 INSECURE_REGISTRY="--insecure-registry harbor.wk.qianbao-inc.com --insecure-registry harbor-test.wk.qianbao-inc.com --insecure-registry reg.qianbao-inc.com"
 eof
 
