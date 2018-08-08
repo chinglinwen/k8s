@@ -29,7 +29,7 @@ if cert change, need restart etcd.
 ## install masters
 
 ```
-./aster-install.sh
+./master-install.sh
 ```
 
 ## install nodes ( ovs, docker, kubelet and kube-proxy )
