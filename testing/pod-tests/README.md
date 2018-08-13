@@ -117,3 +117,20 @@ sudo yum install tkinter -y
 ## 参考
 
 1. https://docs.openstack.org/developer/performance-docs/test_plans/kubernetes_density/plan.html
+
+
+## Ping test
+
+```
+# default namespace
+./ping.sh 
+
+# minions namespace
+NS=minions ./ping.sh
+```
+
+## Loop create pod and destroy test
+
+```
+./loop.sh &> loop.log &
+```

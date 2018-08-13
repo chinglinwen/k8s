@@ -6,6 +6,7 @@ echo
 
 n=${N:=1}
 ALLNODES=${ALLNODES:-false}
+tag=${TAG:=x}
 
 if [ "x$ALLNODES" = "xfalse" ]; then
   nodeip="$( kubectl get nodes -o yaml | grep kubernetes.io/hostname| head -1 | awk '{ print $2 }' FS=':' )"
@@ -39,7 +40,7 @@ initcnt="$( kubectl get event -n minions |grep Warn | grep -v -e 'pull image' -e
 ((initcnt++))
 
 for ((i=1;i <= $n;i++)) {
-  NUMBER=$i
+  NUMBER="$tag-$i"
   cat <<eof | kubectl create -f -
 apiVersion: apps/v1beta1
 kind: Deployment
