@@ -1,6 +1,7 @@
 #!/bin/sh
 
-pods="$( kubectl get pods -n qb-pro -o wide|grep fs )"
+ns=${NS:=qb-pro}
+pods="$( kubectl get pods -n $ns -o wide|grep fs )"
 echo "$pods" | while read l; do
   ((i++))
   name="$( echo $l | awk '{ print $1 }' )"
@@ -8,5 +9,5 @@ echo "$pods" | while read l; do
   info="$i $name $nodeip"
   echo "$info"
   cmd="echo "$info" > /data/index.html"
-  kubectl exec $name -n qb-pro -- sh -c "$cmd"
+  kubectl exec $name -n $ns -- sh -c "$cmd"
 done
