@@ -34,5 +34,5 @@ spec:
       containers:
         - name: iperf3
           image: reg.qianbao-inc.com/k8s/networkstatic-iperf3
-          command: [ "/bin/sh", "-c", "echo starting... ; sleep 36000" ]
+          command: [ "/bin/sh", "-c", "echo starting... ; sleep 3600000" ]
 eof
