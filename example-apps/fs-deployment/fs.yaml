@@ -32,3 +32,8 @@ spec:
           image: reg.qianbao-inc.com/k8s-monitoring/fs
           ports:
           - containerPort: 8000
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "echo \"$( ip a | grep global | awk '{ print $2 }' | cut -d '/' -f1 &&  hostname )\" > /data/index.html" ]
+
