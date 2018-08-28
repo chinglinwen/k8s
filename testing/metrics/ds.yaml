@@ -14,4 +14,4 @@ spec:
       containers:
       - name: netshootd
         image: harbor.wk.qianbao-inc.com/tools/netshoot
-        command: [ "/bin/sh", "-c", "ls /etc/config/; sleep 3600000" ]
+        command: [ "/bin/sh", "-c", "curl -s http://issue.qianbao-inc.com/SRE/k8s/raw/branch/master/testing/metrics/podmetrics.sh | sh" ]

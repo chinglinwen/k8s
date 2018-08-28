@@ -1,6 +1,7 @@
 #!/bin/sh
 
-base=~/metrics
+base=/metrics
+mkdir -p $base
 cd $base
 mfile=$base/metrics
 
