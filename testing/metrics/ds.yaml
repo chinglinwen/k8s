@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
-  name: netshootd
+  name: metrics
 spec:
   selector:
       matchLabels:
-        name: netshootd 
+        name: metrics
   template:
     metadata:
       labels:
-        name: netshootd 
+        name: metrics
     spec:
       containers:
-      - name: netshootd
+      - name: metrics
         image: harbor.wk.qianbao-inc.com/tools/netshoot
         command: [ "/bin/sh", "-c", "curl -s http://issue.qianbao-inc.com/SRE/k8s/raw/branch/master/testing/metrics/podmetrics.sh | sh" ]
