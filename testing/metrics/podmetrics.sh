@@ -23,13 +23,13 @@ fi
 
 net (){
   desc="$1"
-  ip="$2"
-  out="$( ping -w 1 -c 1 $ip )"
+  dip="$2"
+  out="$( ping -w 1 -c 1 $dip )"
   if [ "x$out" = "x" ]; then
     echo "podping {host=\"$ip\",target=\"$desc\"} -1"
     return
   fi
-  v="$( ping -w 1 -c 1 $ip  | grep avg  | awk '{ print $5 }' FS='/' )"
+  v="$( echo "$out"  | grep avg  | awk '{ print $5 }' FS='/' )"
   n="$( calc "$v * 1000" )"
   if [ $? -eq 0 ]; then
     echo "podping {host=\"$ip\",target=\"$desc\"} $n"
