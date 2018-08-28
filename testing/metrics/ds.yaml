@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: netshootd
+spec:
+  selector:
+      matchLabels:
+        name: netshootd 
+  template:
+    metadata:
+      labels:
+        name: netshootd 
+    spec:
+      containers:
+      - name: netshootd
+        image: harbor.wk.qianbao-inc.com/tools/netshoot
+        command: [ "/bin/sh", "-c", "ls /etc/config/; sleep 3600000" ]
