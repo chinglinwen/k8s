@@ -154,7 +154,6 @@ eof
 
 
 cat >/etc/rsyslog.d/haproxy.conf<<"eof"
-/etc/rsyslog.d/haproxy.conf
 $ModLoad imudp
 $UDPServerRun 514
 local2.*                       /var/log/haproxy.log
