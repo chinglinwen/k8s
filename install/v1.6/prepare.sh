@@ -15,7 +15,9 @@ $ETCD2 etcd2 etcd-$SUFFIX2 #k8s
 $ETCD3 etcd3 etcd-$SUFFIX3 #k8s
 $NODE1 node1 #k8s
 $NODE2 node2 #k8s
-$NODE3 node3 #k8s"
+$NODE3 node3 #k8s
+$NODE4 node4 #k8s
+$NODE5 node5 #k8s"
 
 cat>hosts.sh<<eof
 sed -i '/#k8s/d' /etc/hosts
@@ -24,15 +26,6 @@ $hosts
 eof1
 eof
 
-HOSTS="\"$VIP\",
-\"$MASTER1\",
-\"$MASTER2\",
-\"$ETCD1\",
-\"$ETCD2\",
-\"$ETCD3\",
-\"$NODE1\",
-\"$NODE2\",
-\"$NODE3\","
 
 curl http://fs.qianbao-inc.com/k8s/install/v1.6/uploadapi -F file=@env -F truncate=yes
 curl http://fs.qianbao-inc.com/k8s/install/v1.6/uploadapi -F file=@$ENV -F truncate=yes

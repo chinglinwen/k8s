@@ -7,6 +7,10 @@ export MASTER2=10.64.167.12
 export NODE1=10.64.60.11
 export NODE2=10.64.60.12
 export NODE3=10.64.60.13
+export NODE4=10.64.60.14
+export NODE5=10.64.60.15
+
+expoprt DNS=10.64.8.53,10.19.39.53
 
 #export PODCIDR=
 
@@ -31,10 +35,7 @@ export HOSTS="\"$VIP\",
 \"$MASTER2\",
 \"$ETCD1\",
 \"$ETCD2\",
-\"$ETCD3\",
-\"$NODE1\",
-\"$NODE2\",
-\"$NODE3\","
+\"$ETCD3\","
 
 export BASE="$( pwd | sed 's/k8s.*/k8s\/install\/v1.6/' )"
 
@@ -42,11 +43,15 @@ export BASE="$( pwd | sed 's/k8s.*/k8s\/install\/v1.6/' )"
 BIP1="10.64.193.1/25"
 BIP2="10.64.194.1/25"
 BIP3="10.64.195.1/25"
+BIP4="10.64.196.1/25"
+BIP5="10.64.197.1/25"
 
 IP="$( ip a | grep 'inet ' | grep -v -e docker -e 127.0.0.1 -e 'vir' | awk '{ print $2 }' | cut -f1 -d'/' )"
 case $IP in
   $NODE1 ) BIP=$BIP1 ;;
   $NODE2 ) BIP=$BIP2 ;;
   $NODE3 ) BIP=$BIP3 ;;
+  $NODE4 ) BIP=$BIP4 ;;
+  $NODE5 ) BIP=$BIP5 ;;
 esac
 echo $BIP

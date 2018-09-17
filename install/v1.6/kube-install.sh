@@ -47,7 +47,7 @@ ExecStart=/apps/soft/kubernetes/bin/kubelet \\
   --require-kubeconfig \\
   --cert-dir=/etc/kubernetes/ssl \\
   --container-runtime=docker \\
-  --cluster_dns=10.254.0.2 \\
+  --cluster_dns=$DNS \\
   --cluster_domain=cluster.local. \\
   --hairpin-mode promiscuous-bridge \\
   --allow-privileged=true \\

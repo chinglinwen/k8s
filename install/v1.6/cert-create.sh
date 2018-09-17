@@ -1,6 +1,8 @@
 #!/bin/sh
 . ./env
 
+rm -rf /tmp/ssl/
+
 # create cert
 
 # tool install

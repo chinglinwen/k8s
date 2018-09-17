@@ -24,9 +24,13 @@ $ETCD3"
 masterlist="$MASTER1
 $MASTER2"
 
-nodelist="$NODE1
-$NODE2
-$NODE3"
+# choose nodes to execute
+#nodelist="$NODE1
+#$NODE2
+#$NODE3"
+
+nodelist="$NODE4
+$NODE5"
 
 ee (){
   e "$etcdlist" $1
@@ -69,5 +73,7 @@ $MASTER2
 $NODE1
 $NODE2
 $NODE3
+$NODE4
+$NODE5
 eof
 }
