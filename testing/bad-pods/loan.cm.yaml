@@ -1,0 +1,110 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    apps__webapp__logback-spring.xml: "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<configuration
+      scan=\"true\" scanPeriod=\"60 seconds\" debug=\"false\">\n\t<!-- 控制台设置 -->\n\t<appender
+      name=\"STDOUT\" class=\"ch.qos.logback.core.ConsoleAppender\">\n\t\t<!-- encoder
+      默认配置为PatternLayoutEncoder -->\n\t\t<encoder>\n\t\t\t<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}
+      [%thread] |%X{tid}| %-5level %logger{36} - %msg%n\n\t\t\t</pattern>\n\t\t</encoder>\n\t</appender>\n\n\t\n\t\n\t<appender
+      name=\"fileAppender\"\n          class=\"ch.qos.logback.core.rolling.RollingFileAppender\">\n
+      \         <!-- 文件输出的日志 的格式 -->\n          <encoder>\n              <pattern>\n
+      \                  %d{HH:mm:ss.SSS} [%thread] |%X{tid}| %-5level %logger{5}
+      - %msg%n\n              </pattern>\n              <charset>UTF-8</charset> <!--
+      此处设置字符集，防止中文乱码 -->\n          </encoder>\n\n          <rollingPolicy class=\"ch.qos.logback.core.rolling.TimeBasedRollingPolicy\">\n
+      \           <fileNamePattern>/apps/logs/bhh-trade-%d{yyyy-MM-dd}.%i.log</fileNamePattern>\n
+      \             <timeBasedFileNamingAndTriggeringPolicy\n                   class=\"ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP\">\n
+      \                  <!-- 最大64MB 超过最大值，会重新建一个文件-->\n                   <maxFileSize>64
+      MB</maxFileSize>\n              </timeBasedFileNamingAndTriggeringPolicy>\n
+      \         </rollingPolicy>\n\n          <filter class=\"ch.qos.logback.classic.filter.ThresholdFilter\">\n
+      \             <level>DEBUG</level>\n          </filter>\n\n     </appender>\n\t\n\n\t<logger
+      name=\"org.springframework\" level=\"INFO\" />\n\t<logger name=\"org.springboot\"
+      level=\"INFO\" />\n\t<logger name=\"com.qianbao.bhh\" level=\"DEBUG\" />\n\n\t<!--
+      * 通配符 设置log打印级别 对所有类有效TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF -->\n\t<root
+      level=\"INFO\">\n\t\t<appender-ref ref=\"STDOUT\" />\n\t\t<appender-ref ref=\"fileAppender\"
+      />\n\t</root>\n</configuration> "
+    apps__webapp__start.sh: |
+      #!/bin/bash
+      ##export LD_PRELOAD=/apps/tools/faketime/libfaketime.so.1 FAKETIME="-30d"
+      export JAVA_HOME="/apps/jdk1.7.0_75"
+      export PATH=$JAVA_HOME/bin:$PATH
+      cd /apps/webapp/
+
+      APP_NAME=bhh-trade
+      APP_PARAMTER="-Dqianbao.config.env=qa -Dqianbao.config.app=bhhservice_bhh_trade_service -Dqianbao.config.profile=master -Dfile.encoding=utf-8 -Duser.timezone=GMT+08"
+      APP_OPTS="-server -Xms3g -Xmx3g -Xss256K -Djava.awt.headless=true -Dfile.encoding=utf-8 -XX:+UseParallelGC -XX:PermSize=256m -XX:MaxPermSize=256m"
+
+      mkdir -p /apps/webapp/conf
+
+      java -jar $APP_PARAMTER  "$APP_NAME".jar com.qianbao.bhh.BhhTradeApplication
+      echo '================================================================'
+      echo 'java abnormal exit, the container will terminate in 3 minutes'
+      sleep 180
+    configmap_updatetime: 2017-12-25 19:12:44
+    exec_command_wk: '[''/bin/bash'', ''-c'', ''/bin/cp /config/apps__webapp__start.sh
+      /apps/webapp/start.sh;/bin/cp /config/apps__webapp__logback-spring.xml /apps/webapp/logback-spring.xml;'']'
+    nconf_branch_wk: master
+    nconf_version_wk: 1.0.1.9_1712221344
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: 2017-12-25T11:10:53Z
+    name: bhhservice-bhh-trade-service
+    resourceVersion: "17161374"
+    uid: 45bd49d4-e964-11e7-8b8c-f40343437654
+- apiVersion: v1
+  data:
+    apps__webapp__WEB-INF__classes__application.properties: |
+      db.driver=com.mysql.jdbc.Driver
+      db.init=5
+      db.live=300000
+      db.max=50
+      db.min=5
+      db.pass=loan
+      db.test=60000
+      db.timeout=60000
+      db.url=jdbc:mysql://172.28.38.83:3306/loan?useUnicode=true&amp;characterEncoding=UTF-8
+      db.user=loan
+      db_backup.pass=loan
+      db_backup.url=jdbc:mysql://192.168.1.250:3306/loan?useUnicode=true&amp;characterEncoding=UTF-8
+      db_backup.user=loan
+      fileServerHost=http://test-img0.qianbao.com/
+      jobCenterHost=http://172.28.38.83/job
+      lockDir=/com/qianbao/o2o/job
+      lockHost=http://192.168.1.169:2379;http://192.168.1.179:2379;http://192.168.1.180:2379
+      lockPass=o2o
+      lockUser=o2o
+      pushPlatform.host=http://192.168.1.157:8080
+      r360.orgNo=O20170316100051
+      redis.cacheExpire=180000
+      redis.dubboAddress=192.168.1.236:3181,192.168.1.237:3181,192.168.1.237:3182
+      redis.namespace=ShengHuoLoanManager-7660
+      redis.sessionExpire=1800
+      redis.shiroNamespace=ShengHuoManagerShiro-7E10
+      redisProxy.zookeeper=192.168.1.236:3181,192.168.1.237:3181,192.168.1.237:3182
+      serverHost=http://172.28.38.83
+      sign.apiId=test
+      sign.apiId1=test
+      sign.apiSecret=a12d765e3319adc129c9b822d5c1eb84
+      sign.apiSecret1=a12d765e3319adc129c9b822d5c1eb84
+      sign.baseUrl=http://172.28.40.32/esp
+      sign.baseUrl1=http://172.28.40.32:8080/esp
+      sign.userUrl=http://172.28.40.32/esp
+      sign.userUrl1=http://172.28.40.32:8080/esp
+      walletCore.appKey=000008
+      walletCore.appSecret=6F4E38D2-EB59-446F-BC1A-E4E93031D593
+      walletCore.host=https://sit2-apis.qianbao.com/xdcore
+    configmap_updatetime: 2017-11-06 17:26:50
+    exec_command_wk: '[''/bin/bash'', ''-c'', ''/bin/cp /config/apps__webapp__WEB-INF__classes__application.properties
+      /apps/webapp/WEB-INF/classes/application.properties;'']'
+    nconf_branch_wk: master
+    nconf_version_wk: 1.0.0.2_1710301146
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: 2017-11-06T09:24:37Z
+    name: loan-manager-web
+    resourceVersion: "9727598"
+    uid: 4f4304ee-c2d4-11e7-8af3-f40343437654
+kind: List
+metadata: {}
+resourceVersion: ""
+selfLink: ""

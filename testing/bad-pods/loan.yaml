@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: loan-manager-web-test
+spec:
+  containers:
+  - args:
+    - bin/bash
+    - /apps/webapp/dockerstart.sh
+    image: harbor-test.qianbao-inc.com/appimages/tomcat-loan_manager_web:20171226094123
+    imagePullPolicy: Always
+    name: loan-manager-web
+    resources:
+      limits:
+        cpu: 200m
+        memory: "4"
+      requests:
+        cpu: 200m
+        memory: "4"
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /apps/webapp/WEB-INF/classes/application.properties
+      name: config
+      subPath: apps__webapp__WEB-INF__classes__application.properties
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-h9157
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  nodeName: 172.28.46.125
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  volumes:
+  - configMap:
+      defaultMode: 420
+      name: loan-manager-web
+    name: config
+  - name: default-token-h9157
+    secret:
+      defaultMode: 420
+      secretName: default-token-h9157
