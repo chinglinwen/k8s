@@ -9,11 +9,10 @@ ALLNODES=${ALLNODES:-false}
 tag=${TAG:=x}
 
 if [ "x$ALLNODES" = "xfalse" ]; then
-  nodeip="$( kubectl get nodes -o yaml | grep kubernetes.io/hostname| head -1 | awk '{ print $2 }' FS=':' )"
+  nodeip="$( kubectl get nodes -o yaml | grep kubernetes.io/hostname| tail -1 | awk '{ print $2 }' FS=':' )"
   echo "will run on single node only, select node is: $nodeip"
-  NODE="  $( kubectl get nodes -o yaml | grep kubernetes.io/hostname| head -1 )"
-  NODESELECT="      nodeSelector:
-$NODE
+  NODE="  $( kubectl get nodes -o yaml | grep kubernetes.io/hostname| tail -1 )"
+  NODESELECT="$NODE
 "
 fi
 REPLICA=${REPLICA:=3}
@@ -66,6 +65,10 @@ $RESOURCE
           env:
           - name: MINION_RC
             value: "$NUMBER"
+      tolerations:
+      - operator: Exists
+      nodeSelector:
+        type: test
 $NODESELECT
 eof
 

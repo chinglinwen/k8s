@@ -21,5 +21,8 @@ spec:
         env:
         - name: MINION_RC
           value: "1"
+      tolerations:
+      - operator: Exists
       nodeSelector:
+        type: test
 NODENAME
