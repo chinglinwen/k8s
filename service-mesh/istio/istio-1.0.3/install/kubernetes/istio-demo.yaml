@@ -10516,7 +10516,7 @@ data:
         restartPolicy: Always
       containers:
       - name: istio-proxy
-        image: [[ annotation .ObjectMeta `sidecar.istio.io/proxyImage`  "docker.io/istio/proxyv2:1.0.3"  ]]
+        image: [[ annotation .ObjectMeta `sidecar.istio.io/proxyImage`  "chinglinwen/docker.io-istio-proxyv2:1.0.3"  ]]
 
         ports:
         - containerPort: 15090
@@ -10748,7 +10748,7 @@ spec:
       serviceAccountName: istio-grafana-post-install-account
       containers:
         - name: hyperkube
-          image: "quay.io/coreos/hyperkube:v1.7.6_coreos.0"
+          image: "chinglinwen/quay.io-coreos-hyperkube:v1.7.6_coreos.0"
           command: [ "/bin/bash", "/tmp/grafana/run.sh", "/tmp/grafana/custom-resources.yaml" ]
           volumeMounts:
             - mountPath: "/tmp/grafana"
@@ -10884,7 +10884,7 @@ spec:
       serviceAccountName: istio-cleanup-secrets-service-account
       containers:
         - name: hyperkube
-          image: "quay.io/coreos/hyperkube:v1.7.6_coreos.0"
+          image: "chinglinwen/quay.io-coreos-hyperkube:v1.7.6_coreos.0"
           command:
           - /bin/bash
           - -c
@@ -10975,7 +10975,7 @@ spec:
       serviceAccountName: istio-security-post-install-account
       containers:
         - name: hyperkube
-          image: "quay.io/coreos/hyperkube:v1.7.6_coreos.0"
+          image: "chinglinwen/quay.io-coreos-hyperkube:v1.7.6_coreos.0"
           command: [ "/bin/bash", "/tmp/security/run.sh", "/tmp/security/custom-resources.yaml" ]
           volumeMounts:
             - mountPath: "/tmp/security"
@@ -12780,7 +12780,7 @@ spec:
       serviceAccountName: istio-galley-service-account
       containers:
         - name: validator
-          image: "docker.io/istio/galley:1.0.3"
+          image: "chinglinwen/docker.io-istio-galley:1.0.3"
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 443
@@ -12894,7 +12894,7 @@ spec:
       serviceAccountName: istio-egressgateway-service-account
       containers:
         - name: istio-proxy
-          image: "docker.io/istio/proxyv2:1.0.3"
+          image: "chinglinwen/docker.io-istio-proxyv2:1.0.3"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -13033,7 +13033,7 @@ spec:
       serviceAccountName: istio-ingressgateway-service-account
       containers:
         - name: istio-proxy
-          image: "docker.io/istio/proxyv2:1.0.3"
+          image: "chinglinwen/docker.io-istio-proxyv2:1.0.3"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -13178,7 +13178,7 @@ spec:
     spec:
       containers:
         - name: grafana
-          image: "grafana/grafana:5.2.3"
+          image: "chinglinwen/grafana-grafana:5.2.3"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
@@ -13322,7 +13322,7 @@ spec:
                 - s390x
       containers:
       - name: mixer
-        image: "docker.io/istio/mixer:1.0.3"
+        image: "chinglinwen/docker.io-istio-mixer:1.0.3"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9093
@@ -13350,7 +13350,7 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
       - name: istio-proxy
-        image: "docker.io/istio/proxyv2:1.0.3"
+        image: "chinglinwen/docker.io-istio-proxyv2:1.0.3"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9091
@@ -13428,7 +13428,7 @@ spec:
         emptyDir: {}
       containers:
       - name: mixer
-        image: "docker.io/istio/mixer:1.0.3"
+        image: "chinglinwen/docker.io-istio-mixer:1.0.3"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9093
@@ -13456,7 +13456,7 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
       - name: istio-proxy
-        image: "docker.io/istio/proxyv2:1.0.3"
+        image: "chinglinwen/docker.io-istio-proxyv2:1.0.3"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9091
@@ -13534,7 +13534,7 @@ spec:
       serviceAccountName: istio-pilot-service-account
       containers:
         - name: discovery
-          image: "docker.io/istio/pilot:1.0.3"
+          image: "chinglinwen/docker.io-istio-pilot:1.0.3"
           imagePullPolicy: IfNotPresent
           args:
           - "discovery"
@@ -13579,7 +13579,7 @@ spec:
             mountPath: /etc/certs
             readOnly: true
         - name: istio-proxy
-          image: "docker.io/istio/proxyv2:1.0.3"
+          image: "chinglinwen/docker.io-istio-proxyv2:1.0.3"
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 15003
@@ -13689,7 +13689,7 @@ spec:
       serviceAccountName: prometheus
       containers:
         - name: prometheus
-          image: "docker.io/prom/prometheus:v2.3.1"
+          image: "chinglinwen/docker.io-prom-prometheus:v2.3.1"
           imagePullPolicy: IfNotPresent
           args:
             - '--storage.tsdb.retention=6h'
@@ -13784,7 +13784,7 @@ spec:
       serviceAccountName: istio-citadel-service-account
       containers:
         - name: citadel
-          image: "docker.io/istio/citadel:1.0.3"
+          image: "chinglinwen/docker.io-istio-citadel:1.0.3"
           imagePullPolicy: IfNotPresent
           args:
             - --append-dns-names=true
@@ -13855,7 +13855,7 @@ spec:
     spec:
       containers:
         - name: servicegraph
-          image: "docker.io/istio/servicegraph:1.0.3"
+          image: "chinglinwen/docker.io-istio-servicegraph:1.0.3"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8088
@@ -14046,7 +14046,7 @@ spec:
     spec:
       containers:
         - name: jaeger
-          image: "docker.io/jaegertracing/all-in-one:1.5"
+          image: "chinglinwen/docker.io-jaegertracing-all-in-one:1.5"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9411

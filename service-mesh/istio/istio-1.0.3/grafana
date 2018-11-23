@@ -1,0 +1,251 @@
+---
+# Source: istio/charts/grafana/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: istio-grafana-custom-resources
+  namespace: istio-system
+  labels:
+    app: istio-grafana
+    chart: grafana-1.0.1
+    release: RELEASE-NAME
+    heritage: Tiller
+    istio: grafana
+data:
+  custom-resources.yaml: |-    
+    apiVersion: authentication.istio.io/v1alpha1
+    kind: Policy
+    metadata:
+      name: grafana-ports-mtls-disabled
+      namespace: istio-system
+    spec:
+      targets:
+      - name: grafana
+        ports:
+        - number: 3000
+  run.sh: |-    
+    #!/bin/sh
+    
+    set -x
+    
+    if [ "$#" -ne "1" ]; then
+        echo "first argument should be path to custom resource yaml"
+        exit 1
+    fi
+    
+    pathToResourceYAML=${1}
+    
+    /kubectl get validatingwebhookconfiguration istio-galley 2>/dev/null
+    if [ "$?" -eq 0 ]; then
+        echo "istio-galley validatingwebhookconfiguration found - waiting for istio-galley deployment to be ready"
+        while true; do
+            /kubectl -n istio-system get deployment istio-galley 2>/dev/null
+            if [ "$?" -eq 0 ]; then
+                break
+            fi
+            sleep 1
+        done
+        /kubectl -n istio-system rollout status deployment istio-galley
+        if [ "$?" -ne 0 ]; then
+            echo "istio-galley deployment rollout status check failed"
+            exit 1
+        fi
+        echo "istio-galley deployment ready for configuration validation"
+    fi
+    sleep 5
+    /kubectl apply -f ${pathToResourceYAML}
+
+---
+---
+# Source: istio/charts/grafana/templates/create-custom-resources-job.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: istio-grafana-post-install-account
+  namespace: istio-system
+  labels:
+    app: istio-grafana
+    chart: grafana-1.0.1
+    heritage: Tiller
+    release: RELEASE-NAME
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: istio-grafana-post-install-istio-system
+  labels:
+    app: istio-grafana
+    chart: grafana-1.0.1
+    heritage: Tiller
+    release: RELEASE-NAME
+rules:
+- apiGroups: ["authentication.istio.io"] # needed to create default authn policy
+  resources: ["*"]
+  verbs: ["*"]
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: istio-grafana-post-install-role-binding-istio-system
+  labels:
+    app: istio-grafana
+    chart: grafana-1.0.1
+    heritage: Tiller
+    release: RELEASE-NAME
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: istio-grafana-post-install-istio-system
+subjects:
+  - kind: ServiceAccount
+    name: istio-grafana-post-install-account
+    namespace: istio-system
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: istio-grafana-post-install
+  namespace: istio-system
+  annotations:
+    "helm.sh/hook": post-install
+    "helm.sh/hook-delete-policy": hook-succeeded
+  labels:
+    app: istio-grafana
+    chart: grafana-1.0.1
+    release: RELEASE-NAME
+    heritage: Tiller
+spec:
+  template:
+    metadata:
+      name: istio-grafana-post-install
+      labels:
+        app: istio-grafana
+        release: RELEASE-NAME
+    spec:
+      serviceAccountName: istio-grafana-post-install-account
+      containers:
+        - name: hyperkube
+          image: "quay.io/coreos/hyperkube:v1.7.6_coreos.0"
+          command: [ "/bin/bash", "/tmp/grafana/run.sh", "/tmp/grafana/custom-resources.yaml" ]
+          volumeMounts:
+            - mountPath: "/tmp/grafana"
+              name: tmp-configmap-grafana
+      volumes:
+        - name: tmp-configmap-grafana
+          configMap:
+            name: istio-grafana-custom-resources
+      restartPolicy: OnFailure
+
+---
+---
+# Source: istio/charts/grafana/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: istio-system
+  annotations:
+  labels:
+    app: grafana
+    chart: grafana-1.0.1
+    release: RELEASE-NAME
+    heritage: Tiller
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: http
+  selector:
+    app: grafana
+
+---
+---
+# Source: istio/charts/grafana/templates/deployment.yaml
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: istio-system
+  labels:
+    app: grafana
+    chart: grafana-1.0.1
+    release: RELEASE-NAME
+    heritage: Tiller
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: grafana
+      annotations:
+        sidecar.istio.io/inject: "false"
+        scheduler.alpha.kubernetes.io/critical-pod: ""
+    spec:
+      containers:
+        - name: grafana
+          image: "gcr.io/istio-release/grafana:1.0.2"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /login
+              port: 3000
+          env:
+          - name: GRAFANA_PORT
+            value: "3000"
+          - name: GF_AUTH_BASIC_ENABLED
+            value: "false"
+          - name: GF_AUTH_ANONYMOUS_ENABLED
+            value: "true"
+          - name: GF_AUTH_ANONYMOUS_ORG_ROLE
+            value: Admin
+          - name: GF_PATHS_DATA
+            value: /data/grafana
+          resources:
+            requests:
+              cpu: 10m
+            
+          volumeMounts:
+          - name: data
+            mountPath: /data/grafana
+      affinity:      
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: beta.kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+                - ppc64le
+                - s390x
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 2
+            preference:
+              matchExpressions:
+              - key: beta.kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+          - weight: 2
+            preference:
+              matchExpressions:
+              - key: beta.kubernetes.io/arch
+                operator: In
+                values:
+                - ppc64le
+          - weight: 2
+            preference:
+              matchExpressions:
+              - key: beta.kubernetes.io/arch
+                operator: In
+                values:
+                - s390x
+      volumes:
+      - name: data
+        emptyDir: {}
+
+---

@@ -1,0 +1,14 @@
+file=istio.yaml
+sed -i 's_docker.io/istio/citadel:1.0.3_chinglinwen/docker.io-istio-citadel:1.0.3_' $file
+sed -i 's_docker.io/istio/citadel:1.0.3_chinglinwen/docker.io-istio-citadel:1.0.3_' $file
+sed -i 's_docker.io/istio/galley:1.0.3_chinglinwen/docker.io-istio-galley:1.0.3_' $file
+sed -i 's_docker.io/istio/mixer:1.0.3_chinglinwen/docker.io-istio-mixer:1.0.3_' $file
+sed -i 's_docker.io/istio/pilot:1.0.3_chinglinwen/docker.io-istio-pilot:1.0.3_' $file
+sed -i 's_docker.io/istio/proxy_init:1.0.3_chinglinwen/docker.io-istio-proxy_init:1.0.3_' $file
+sed -i 's_docker.io/istio/proxyv2:1.0.3_chinglinwen/docker.io-istio-proxyv2:1.0.3_' $file
+sed -i 's_docker.io/istio/servicegraph:1.0.3_chinglinwen/docker.io-istio-servicegraph:1.0.3_' $file
+sed -i 's_docker.io/istio/sidecar_injector:1.0.3_chinglinwen/docker.io-istio-sidecar_injector:1.0.3_' $file
+sed -i 's_docker.io/jaegertracing/all-in-one:1.5_chinglinwen/docker.io-jaegertracing-all-in-one:1.5_' $file
+sed -i 's_docker.io/prom/prometheus:v2.3.1_chinglinwen/docker.io-prom-prometheus:v2.3.1_' $file
+sed -i 's_grafana/grafana:5.2.3_chinglinwen/grafana-grafana:5.2.3_' $file
+sed -i 's,quay.io/coreos/hyperkube:v1.7.6_coreos.0,chinglinwen/quay.io-coreos-hyperkube:v1.7.6_coreos.0,' $file
