@@ -58,7 +58,7 @@ spec:
       serviceAccountName: kube-router
       containers:
       - name: kube-router
-        image: reg.qianbao-inc.com/base/kube-router
+        image: harbor.wk.qianbao-inc.com/k8s/kube-router:v0.2.3
         imagePullPolicy: Always
         args:
         - "--run-router=true"
