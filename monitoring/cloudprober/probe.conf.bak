@@ -1,0 +1,28 @@
+probe {
+  name: "example"
+  type: HTTP
+  targets {
+    host_names: "www.example.com";
+    #host_names: "172.28.40.251:8080"
+  }
+  interval_msec: 5000  # 5s
+  timeout_msec: 1000   # 1s
+}
+probe {
+  name: "baidu"
+  type: HTTP
+  targets {
+    host_names: "www.baidu.com"
+  }
+  interval_msec: 5000  # 5s
+  timeout_msec: 1000   # 1s
+}
+probe {
+  name: "fs pro-env"
+  type: HTTP
+  targets {
+    host_names: "protest.wk.qianbao-inc.com"
+  }
+  interval_msec: 5000  # 5s
+  timeout_msec: 1000   # 1s
+}
