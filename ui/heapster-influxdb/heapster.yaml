@@ -20,7 +20,7 @@ spec:
       serviceAccountName: heapster
       containers:
       - name: heapster
-        image: reg.qianbao-inc.com/k8s/heapster-amd64:v1.5.3
+        image: chinglinwen/k8s.gcr.io-heapster-amd64:v1.5.4
         imagePullPolicy: IfNotPresent
         command:
         - /heapster
