@@ -55,7 +55,7 @@ fi
 
 
 cat > /etc/sysconfig/kubelet <<'eof'
-KUBELET_EXTRA_ARGS=" --root-dir=/data/kubelet --pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google_containers/pause-amd64:3.1 --cgroup-driver=systemd --runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice"
+KUBELET_EXTRA_ARGS=" --root-dir=/data/kubelet --pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google_containers/pause-amd64:3.1 --cgroup-driver=cgroupfs --runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice"
 eof
 
 rm -f /var/lib/kubelet/config.yaml
@@ -66,7 +66,11 @@ rm -f /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 # echo "KUBELET_CGROUP_ARGS=\" --cgroup-driver=systemd\""  > /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 
 # this works
-sed -i 's/kubelet.*$/kubelet --cgroup-driver=systemd/g' /usr/lib/systemd/system/kubelet.service
+# sed -i 's/kubelet.*$/kubelet --cgroup-driver=systemd/g' /usr/lib/systemd/system/kubelet.service
+
+sed -i 's/kubelet.*$/kubelet --cgroup-driver=cgroupfs/g' /usr/lib/systemd/system/kubelet.service
+sed -i 's/cgroupDriver.*/cgroupDriver: cgroupfs/' /var/lib/kubelet/config.yaml
+# sed -i 's/--cgroup-driver=.*\ /--cgroup-driver=cgroupfs\ /' /etc/sysconfig/kubelet
 
 # cat > /etc/sysconfig/kubelet <<'eof'
 # KUBELET_EXTRA_ARGS=" --root-dir=/data/kubelet --pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google_containers/pause-amd64:3.1 --cgroup-driver=cgroupfs"

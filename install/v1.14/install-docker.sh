@@ -38,7 +38,7 @@ mkdir /etc/docker 2>/dev/null
 cat << EOF > /etc/docker/daemon.json
 {
  "registry-mirrors": [ "https://5s7givlk.mirror.aliyuncs.com"],
- "exec-opts": ["native.cgroupdriver=systemd"],
+ "exec-opts": ["native.cgroupdriver=cgroupfs"],
  "insecure-registries":["http://harbor.haodai.net"],
   "log-driver": "json-file",
   "log-opts": {
