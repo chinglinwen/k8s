@@ -1,0 +1,4 @@
+  # execute on every node
+  brctl addif kube-bridge bond0
+  brctl show
+
