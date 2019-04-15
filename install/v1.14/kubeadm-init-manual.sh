@@ -106,9 +106,9 @@ kubeadm join 172.31.90.219:6443 --token w0dn8y.d2ih2dlfsstcm9bc \
 
 # dashboard
 
-#wget https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
-#sed -i 's/k8s.gcr.io/chinglinwen/' kubernetes-dashboard.yaml
-#sed 's/auto-generate-certificates/auto-generate-certificates\n          - --token-ttl=0/' kubernetes-dashboard.yaml
+wget https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+sed -i 's/k8s.gcr.io/chinglinwen/' kubernetes-dashboard.yaml
+sed -i 's/auto-generate-certificates/auto-generate-certificates\n          - --token-ttl=0/' kubernetes-dashboard.yaml
 kubectl apply -f kubernetes-dashboard.yaml
 
 #create sample user

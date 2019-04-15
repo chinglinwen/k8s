@@ -55,7 +55,7 @@ fi
 
 
 cat > /etc/sysconfig/kubelet <<'eof'
-KUBELET_EXTRA_ARGS=" --root-dir=/data/kubelet --pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google_containers/pause-amd64:3.1 --cgroup-driver=cgroupfs --runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice"
+KUBELET_EXTRA_ARGS=" --root-dir=/data/kubelet --pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google_containers/pause-amd64:3.1 --cgroup-driver=cgroupfs --runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice --read-only-port=10255"
 eof
 
 rm -f /var/lib/kubelet/config.yaml
