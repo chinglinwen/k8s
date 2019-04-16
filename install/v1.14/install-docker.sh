@@ -70,10 +70,10 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 sudo systemctl status docker
 
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-id
+# sudo groupadd docker
+# sudo usermod -aG docker $USER
+# newgrp docker
+# id
 docker run hello-world
 
 echo "docker install ok"
