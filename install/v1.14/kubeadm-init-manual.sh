@@ -40,7 +40,7 @@ apiServer:
     #insecure-bind-address: "0.0.0.0"
     insecure-port: "8080"
 networking:
-  podSubnet: "10.1.1.0/20"
+  podSubnet: "10.11.1.0/20"
 #imageRepository: registry.cn-hangzhou.aliyuncs.com/google_containers
 dns:
   type: CoreDNS
@@ -49,14 +49,15 @@ etcd:
     dataDir: /data/etcd
 eof
 
-# retry
+# teardown ( execute on all master and nodes )
 # systemctl stop kubelet
 # rm -rf /etc/kubernetes/manifests/kube-*
 # rm -rf /var/lib/etcd
-# kubeadm reset
-
 # rm -f /var/lib/kubelet/config.yaml
 # rm -f /var/lib/kubelet/kubeadm-flags.env
+# iptables -F && iptables -t nat -F && iptables -t mangle -F && iptables -X
+# kubeadm reset
+
 
 # save output for, other master to join
 IP="$( ip addr show `ip r |grep default | awk '{ print $5 }'` | grep link -A 1 | grep -Po 'inet \K[\d.]+' )"
@@ -67,6 +68,9 @@ kubeadm init --config kubeadm-config.yaml --experimental-upload-certs --node-nam
 
 # https://github.com/cloudnativelabs/kube-router/blob/master/docs/kubeadm.md
 # must specify --pod-network-cidr when you run kubeadm init.
+
+mkdir -p $HOME/.kube
+\cp -f /etc/kubernetes/admin.conf $HOME/.kube/config
 
 wget https://raw.githubusercontent.com/cloudnativelabs/kube-router/master/daemonset/kubeadm-kuberouter-all-features.yaml
 KUBECONFIG=/etc/kubernetes/admin.conf kubectl apply -f kubeadm-kuberouter-all-features.yaml
@@ -83,18 +87,18 @@ KUBECONFIG=/etc/kubernetes/admin.conf kubectl -n kube-system delete ds kube-prox
 # nc -v 172.31.90.219 6443
 # curl -k https://172.31.90.219:6443/api/v1/namespaces/kube-public/configmaps/cluster-info
 
-# keepalived set for first master only, later change to cover three master
+# keepalived set to first(single) master only, later change to cover three master
 
 # join master
 IP="$( ip addr show `ip r |grep default | awk '{ print $5 }'` | grep link -A 1 | grep -Po 'inet \K[\d.]+' )"
-kubeadm join 172.31.90.219:6443 --token w0dn8y.d2ih2dlfsstcm9bc \
-    --discovery-token-ca-cert-hash sha256:90143f348f7a74bf0c2d696fce1c0a9ec9ae9284e77d850fbc3d9a907b2263bf \
-    --experimental-control-plane --certificate-key df41aec2cea9e2757d9ddef73e5bee078d8a1600b12a5579ccc83d055ff153c8 --node-name $IP -v 5
+kubeadm join 172.31.90.219:6443 --token haqeq9.eco2srqj2fndz7fw \
+    --discovery-token-ca-cert-hash sha256:288d60408622143f1292b55f2bf3a4db6b496df62318cc56d1c3556e13a7cf82 \
+    --experimental-control-plane --certificate-key 06a1ccfa667fb9854b28a428ec068b40041524b5de993bbd8ab88c636ff8ae64 --node-name $IP -v 5
 
 # join node
 IP="$( ip addr show `ip r |grep default | awk '{ print $5 }'` | grep link -A 1 | grep -Po 'inet \K[\d.]+' )"
-kubeadm join 172.31.90.219:6443 --token w0dn8y.d2ih2dlfsstcm9bc \
-    --discovery-token-ca-cert-hash sha256:90143f348f7a74bf0c2d696fce1c0a9ec9ae9284e77d850fbc3d9a907b2263bf --node-name $IP
+kubeadm join 172.31.90.219:6443 --token haqeq9.eco2srqj2fndz7fw \
+    --discovery-token-ca-cert-hash sha256:288d60408622143f1292b55f2bf3a4db6b496df62318cc56d1c3556e13a7cf82 --node-name $IP
 
 
 # Make sure the first control plane node is fully initialized.
@@ -152,3 +156,6 @@ spec:
     k8s-app: kubernetes-dashboard
   type: NodePort
 eof
+
+# add heapster for dashboard and kubectl top
+kubectl apply -f heapster-influxdb

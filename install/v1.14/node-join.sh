@@ -6,5 +6,5 @@ curl -s http://fs.devops.haodai.net/k8s/v1.14/install-kubeadm.sh | sh
 
 # join node
 IP="$( ip addr show `ip r |grep default | awk '{ print $5 }'` | grep link -A 1 | grep -Po 'inet \K[\d.]+' )"
-kubeadm join 172.31.90.219:6443 --token w0dn8y.d2ih2dlfsstcm9bc \
-    --discovery-token-ca-cert-hash sha256:90143f348f7a74bf0c2d696fce1c0a9ec9ae9284e77d850fbc3d9a907b2263bf --node-name $IP
+kubeadm join 172.31.90.219:6443 --token haqeq9.eco2srqj2fndz7fw \
+    --discovery-token-ca-cert-hash sha256:288d60408622143f1292b55f2bf3a4db6b496df62318cc56d1c3556e13a7cf82 --node-name $IP
