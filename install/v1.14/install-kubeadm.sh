@@ -9,7 +9,7 @@ fi
 
 # setting up journald 
 sed -i -e 's/.*Storage.*/Storage=persistent/' -e 's/.*SystemMaxUse.*/SystemMaxUse=2G/' /etc/systemd/journald.conf
-cat >> /etc/rc.local <<'eof'
+cat >> /etc/bashrc <<'eof'
 export HISTTIMEFORMAT="%d/%m/%y %T "
 eof
 
