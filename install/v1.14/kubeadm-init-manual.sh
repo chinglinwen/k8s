@@ -91,13 +91,13 @@ KUBECONFIG=/etc/kubernetes/admin.conf kubectl -n kube-system delete ds kube-prox
 
 # join master
 IP="$( ip addr show `ip r |grep default | awk '{ print $5 }'` | grep link -A 1 | grep -Po 'inet \K[\d.]+' )"
-kubeadm join 172.31.90.219:6443 --token haqeq9.eco2srqj2fndz7fw \
+kubeadm join 172.31.90.219:6443 --token haqnew.eco2srqj2fndznew \
     --discovery-token-ca-cert-hash sha256:288d60408622143f1292b55f2bf3a4db6b496df62318cc56d1c3556e13a7cf82 \
     --experimental-control-plane --certificate-key 06a1ccfa667fb9854b28a428ec068b40041524b5de993bbd8ab88c636ff8ae64 --node-name $IP -v 5
 
 # join node
 IP="$( ip addr show `ip r |grep default | awk '{ print $5 }'` | grep link -A 1 | grep -Po 'inet \K[\d.]+' )"
-kubeadm join 172.31.90.219:6443 --token haqeq9.eco2srqj2fndz7fw \
+kubeadm join 172.31.90.219:6443 --token haqnew.eco2srqj2fndznew \
     --discovery-token-ca-cert-hash sha256:288d60408622143f1292b55f2bf3a4db6b496df62318cc56d1c3556e13a7cf82 --node-name $IP
 
 
