@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# for nfs mount client
+yum -y install nfs-utils rpcbind
+systemctl start rpcbind
+systemctl enable rpcbind
+systemctl status rpcbind
+
 curl -s http://fs.devops.haodai.net/k8s/v1.14/install-docker.sh| sh
 
 curl -s http://fs.devops.haodai.net/k8s/v1.14/install-kubeadm.sh | sh
