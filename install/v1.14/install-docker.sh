@@ -59,7 +59,7 @@ EOF
 
 # the /data/docker must be large, though it can change later
 cat > /etc/sysconfig/docker <<eof
-DOCKER_OPTION=" --data-root=/data/docker --ip-masq=false --mtu=1450"
+DOCKER_OPTION=" --data-root=/data/docker"
 eof
 
 sed -i -e 's,ExecStart=,EnvironmentFile=/etc/sysconfig/docker\nExecStart=,' /usr/lib/systemd/system/docker.service
