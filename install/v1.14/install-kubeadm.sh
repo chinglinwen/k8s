@@ -42,9 +42,8 @@ fi
 # for kernel setting ( required )
 modprobe br_netfilter
 
-cat >/etc/modprobe.d/k8s.conf <<eof
-[modules]
-br_netfilter = r
+cat >/etc/modules-load.d/k8s.conf <<eof
+br_netfilter
 eof
 
 cat > /etc/sysctl.d/k8s.conf <<eof
