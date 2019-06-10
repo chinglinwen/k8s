@@ -85,4 +85,4 @@ sed -i 's/cgroupDriver.*/cgroupDriver: cgroupfs/' /var/lib/kubelet/config.yaml
 systemctl enable --now kubelet
 systemctl daemon-reload
 systemctl restart kubelet
-systemctl status kubelet
+systemctl status kubelet --no-pager

@@ -52,7 +52,7 @@ cat << EOF > /etc/docker/daemon.json
 EOF
 # sudo systemctl daemon-reload
 # sudo systemctl restart docker
-# sudo systemctl status docker
+# sudo systemctl status docker --no-pager
 
 #mkdir -p /data/docker
 # --bip=1.1.1.1/24
@@ -68,7 +68,7 @@ sed -i -e 's/dockerd/dockerd $DOCKER_OPTION/' /usr/lib/systemd/system/docker.ser
 sudo systemctl enable docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker
-sudo systemctl status docker
+sudo systemctl status docker --no-pager
 
 # sudo groupadd docker
 # sudo usermod -aG docker $USER

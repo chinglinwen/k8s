@@ -16,7 +16,7 @@ cat << EOF > /etc/docker/daemon.json
 EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
-sudo systemctl status docker
+sudo systemctl status docker --no-pager
 
 
 sed -i 's/kubelet.*$/kubelet --cgroup-driver=cgroupfs/g' /usr/lib/systemd/system/kubelet.service
@@ -25,4 +25,4 @@ sed -i 's/--cgroup-driver=.*\ /--cgroup-driver=cgroupfs\ /' /etc/sysconfig/kubel
 
 sudo systemctl daemon-reload
 sudo systemctl restart kubelet
-sudo systemctl status kubelet
+sudo systemctl status kubelet --no-pager
