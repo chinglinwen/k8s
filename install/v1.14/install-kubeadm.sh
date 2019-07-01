@@ -74,7 +74,7 @@ rm -f /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 # sed -i 's/kubelet.*$/kubelet --cgroup-driver=systemd/g' /usr/lib/systemd/system/kubelet.service
 
 sed -i 's/kubelet.*$/kubelet --cgroup-driver=cgroupfs/g' /usr/lib/systemd/system/kubelet.service
-sed -i 's/cgroupDriver.*/cgroupDriver: cgroupfs/' /var/lib/kubelet/config.yaml
+sed -i 's/cgroupDriver.*/cgroupDriver: cgroupfs/' /var/lib/kubelet/config.yaml 2>/dev/null
 # sed -i 's/--cgroup-driver=.*\ /--cgroup-driver=cgroupfs\ /' /etc/sysconfig/kubelet
 
 # cat > /etc/sysconfig/kubelet <<'eof'
