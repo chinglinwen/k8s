@@ -14,3 +14,6 @@ kubeadm join 172.31.90.219:6443 --token haqnew.eco2srqj2fndznew \
 
 # # patch node
 # curl -s http://fs.devops.haodai.net/k8s/v1.14/patchnodecidr.sh | sh
+
+# patch spec podcidr
+curl -s http://fs.devops.haodai.net/k8s/v1.14/patchnodecidr-spec.sh | sh

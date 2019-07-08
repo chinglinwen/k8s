@@ -12,12 +12,18 @@ fi
 
 echo "trying assign cidr to node $node"
 
+# default node cidr
+net=21
+
 s1="$( echo $node | awk '{ print $2 }' FS='.' )"
 suffix="$( echo $node | awk '{ print $4 }' FS='.' )"
-if [ "x$s1" = "x31" ]; then
-  net=21
-else
+if [ "x$s1" = "x90" ]; then
   net=22
+fi
+
+echo $node | grep '172.16' > /dev/null
+if [ $? -eq 0 ]; then
+  net=23
 fi
 
 newcidr="10.$net.$suffix.0/24"
