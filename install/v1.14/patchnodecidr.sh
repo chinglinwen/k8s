@@ -12,3 +12,6 @@ else
 fi
 patch="{\"metadata\":{\"annotations\":{\"kube-router.io/pod-cidr\":\"10.$net.$suffix.0/24\"}}}"
 kubectl patch node $node -p $patch
+
+# delete kubeconfig
+rm -f ~/.kube/config

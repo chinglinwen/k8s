@@ -30,3 +30,6 @@ newcidr="10.$net.$suffix.0/24"
 
 patch="{\"spec\":{\"podCIDR\":\"$newcidr\"}}"
 kubectl patch node $node -p $patch
+
+# delete kubeconfig
+rm -f ~/.kube/config
