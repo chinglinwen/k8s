@@ -29,7 +29,7 @@ if [ $? -ne 0 ]; then
   yum repolist
   yum install wget -y
   if [ ! -d k8sv1.14 ]; then
-    wget http://fs.devops.haodai.net/k8s/k8sv1.14.tar.gz
+    wget http://fs.haodai.net/k8s/k8sv1.14.tar.gz
     tar -xzf k8sv1.14.tar.gz
   fi
   cd k8sv1.14

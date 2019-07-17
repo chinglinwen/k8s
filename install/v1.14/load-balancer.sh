@@ -15,7 +15,7 @@
 # ipvsadm-save -n > /etc/sysconfig/ipvsadm
 
 # testing
-# wget http://fs.devops.haodai.net/soft/fileserver2 -O /usr/local/bin/fs && chmod +x /usr/local/bin/fs
+# wget http://fs.haodai.net/soft/fileserver2 -O /usr/local/bin/fs && chmod +x /usr/local/bin/fs
 
 # curl 172.31.90.219:9443
 

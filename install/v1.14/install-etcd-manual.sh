@@ -75,13 +75,13 @@ tar -czf $HOST0.tar.gz $HOST0
 tar -czf $HOST1.tar.gz $HOST1
 tar -czf $HOST2.tar.gz $HOST2
 
-curl http://fs.devops.haodai.net/k8s/v1.14/cert/uploadapi -F file=@$HOST0.tar.gz -F truncate=yes
-curl http://fs.devops.haodai.net/k8s/v1.14/cert/uploadapi -F file=@$HOST1.tar.gz -F truncate=yes
-curl http://fs.devops.haodai.net/k8s/v1.14/cert/uploadapi -F file=@$HOST2.tar.gz -F truncate=yes
+curl http://fs.haodai.net/k8s/v1.14/cert/uploadapi -F file=@$HOST0.tar.gz -F truncate=yes
+curl http://fs.haodai.net/k8s/v1.14/cert/uploadapi -F file=@$HOST1.tar.gz -F truncate=yes
+curl http://fs.haodai.net/k8s/v1.14/cert/uploadapi -F file=@$HOST2.tar.gz -F truncate=yes
 
 # on host2
 cd /tmp
-wget http://fs.devops.haodai.net/k8s/v1.14/cert/172.31.90.102.tar.gz
+wget http://fs.haodai.net/k8s/v1.14/cert/172.31.90.102.tar.gz
 tar -xzf 172.31.90.102.tar.gz
 mv 172.31.90.102/pki /etc/kubernetes
 cd
@@ -90,7 +90,7 @@ tree /etc/kubernetes
 
 # on host1
 cd /tmp
-wget http://fs.devops.haodai.net/k8s/v1.14/cert/172.31.90.101.tar.gz
+wget http://fs.haodai.net/k8s/v1.14/cert/172.31.90.101.tar.gz
 tar -xzf 172.31.90.101.tar.gz
 mv 172.31.90.101/pki /etc/kubernetes
 cd
