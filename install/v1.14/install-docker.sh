@@ -12,7 +12,7 @@ if [ $? -ne 0 ]; then
   \rm -f /etc/yum.repos.d/docker-ce.repo
   \rm -f /etc/yum.repos.d/kubernetes.repo
   
-  sudo yum remove docker \
+  sudo yum remove docker-ce \
                     docker-common \
                     docker-selinux \
                     docker-engine
